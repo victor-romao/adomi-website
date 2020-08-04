@@ -109,20 +109,20 @@ nav .container {
 }
 
 
-.animação_info_covid-appear {
+.animacao_info_covid-appear {
     height: 0px;
 }
 
-.animação_info_covid-appear.animação_info_covid-appear-active {
+.animacao_info_covid-appear.animacao_info_covid-appear-active {
     height: 14px;
     transition: all 0.5s;
 }
 
-.animação_barra_busca-appear {
+.animacao_barra_busca-appear {
     opacity: 0.01;
 }
 
-.animação_barra_busca-appear.animação_barra_busca-appear-active {
+.animacao_barra_busca-appear.animacao_barra_busca-appear-active {
     opacity: 1;
     transition: opacity 0.5s;
 }

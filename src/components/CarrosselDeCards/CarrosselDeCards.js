@@ -1,92 +1,92 @@
 import React from 'react';
 import './CarrosselDeCards.css';
-import CardDeCardápio from '../CardDeCardápio/CardDeCardápio';
+import CardDeCardapio from '../CardDeCardapio/CardDeCardapio';
 
 class CarrosselDeCards extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            núm_exibidos: 4,
-            serviço_presencial: {
+            num_exibidos: 4,
+            servico_presencial: {
                 id_inicial_atual: 0,
-                info_cardápios: [
+                info_cardapios: [
                     {
                         img_name: 'Crepe Tradicional.png', 
                         tipo_de_comida: 'Crepe',
-                        avaliação: '3.9',
-                        título: 'Crepe Tradicional',
-                        descrição: 'Variados sabores de crepes doces e salgados para você escolher.',
-                        custo_logístico: 0,
+                        avaliacao: '3.9',
+                        titulo: 'Crepe Tradicional',
+                        descricao: 'Variados sabores de crepes doces e salgados para você escolher.',
+                        custo_logistico: 0,
                         valor_total: 1350.00,
                         valor_por_pessoa: 100
                     },
                     {
                         img_name: 'Churrasco Premium.png', 
                         tipo_de_comida: 'Churrasco',
-                        avaliação: '4.9',
-                        título: 'Churrasco Premium',
-                        descrição: 'Cortes especiais como chorizo e tomahawk preparados na brasa.',
-                        custo_logístico: 100,
+                        avaliacao: '4.9',
+                        titulo: 'Churrasco Premium',
+                        descricao: 'Cortes especiais como chorizo e tomahawk preparados na brasa.',
+                        custo_logistico: 100,
                         valor_total: 3100.00,
                         valor_por_pessoa: 100
                     },
                     {
-                        img_name: 'Pizza Caseira Básica.png', 
+                        img_name: 'Pizza Caseira Basica.png', 
                         tipo_de_comida: 'Pizza',
-                        avaliação: '4.5',
-                        título: 'Pizza Caseira Básica',
-                        descrição: 'Deliciosa pizza de massa fina e crocante de sabores tradicionais.',
-                        custo_logístico: 0,
+                        avaliacao: '4.5',
+                        titulo: 'Pizza Caseira Básica',
+                        descricao: 'Deliciosa pizza de massa fina e crocante de sabores tradicionais.',
+                        custo_logistico: 0,
                         valor_total: 900.00,
                         valor_por_pessoa: 30
                     },
                     {
-                        img_name: 'Rodízio Japonês.png', 
+                        img_name: 'Rodizio Japones.png', 
                         tipo_de_comida: 'Japonesa',
-                        avaliação: '4.2',
-                        título: 'Rodízio Japonês',
-                        descrição: 'O tradicional rodízio japonês dos restaurantes no seu evento.',
-                        custo_logístico: 100,
+                        avaliacao: '4.2',
+                        titulo: 'Rodízio Japonês',
+                        descricao: 'O tradicional rodízio japonês dos restaurantes no seu evento.',
+                        custo_logistico: 100,
                         valor_total: 2400.00,
                         valor_por_pessoa: 80
                     },
                     {
                         img_name: 'Crepe Tradicional.png', 
                         tipo_de_comida: 'Crepe',
-                        avaliação: '3.9',
-                        título: 'Crepe Tradicional',
-                        descrição: 'Variados sabores de crepes doces e salgados para você escolher.',
-                        custo_logístico: 0,
+                        avaliacao: '3.9',
+                        titulo: 'Crepe Tradicional',
+                        descricao: 'Variados sabores de crepes doces e salgados para você escolher.',
+                        custo_logistico: 0,
                         valor_total: 1350.00,
                         valor_por_pessoa: 100
                     },
                     {
                         img_name: 'Churrasco Premium.png', 
                         tipo_de_comida: 'Churrasco',
-                        avaliação: '4.9',
-                        título: 'Churrasco Premium',
-                        descrição: 'Cortes especiais como chorizo e tomahawk preparados na brasa.',
-                        custo_logístico: 100,
+                        avaliacao: '4.9',
+                        titulo: 'Churrasco Premium',
+                        descricao: 'Cortes especiais como chorizo e tomahawk preparados na brasa.',
+                        custo_logistico: 100,
                         valor_total: 3100.00,
                         valor_por_pessoa: 100
                     },
                     {
-                        img_name: 'Pizza Caseira Básica.png', 
+                        img_name: 'Pizza Caseira Basica.png', 
                         tipo_de_comida: 'Pizza',
-                        avaliação: '4.5',
-                        título: 'Pizza Caseira Básica',
-                        descrição: 'Deliciosa pizza de massa fina e crocante de sabores tradicionais.',
-                        custo_logístico: 0,
+                        avaliacao: '4.5',
+                        titulo: 'Pizza Caseira Básica',
+                        descricao: 'Deliciosa pizza de massa fina e crocante de sabores tradicionais.',
+                        custo_logistico: 0,
                         valor_total: 900.00,
                         valor_por_pessoa: 30
                     },
                     {
-                        img_name: 'Rodízio Japonês.png', 
+                        img_name: 'Rodizio Japones.png', 
                         tipo_de_comida: 'Japonesa',
-                        avaliação: '4.2',
-                        título: 'Rodízio Japonês',
-                        descrição: 'O tradicional rodízio japonês dos restaurantes no seu evento.',
-                        custo_logístico: 100,
+                        avaliacao: '4.2',
+                        titulo: 'Rodízio Japonês',
+                        descricao: 'O tradicional rodízio japonês dos restaurantes no seu evento.',
+                        custo_logistico: 100,
                         valor_total: 2400.00,
                         valor_por_pessoa: 80
                     }
@@ -97,18 +97,18 @@ class CarrosselDeCards extends React.Component {
 
     }
 
-    handleFunctionCall(serviço, button) {
+    handleFunctionCall(servico, button) {
         const component = this;
         function handleAnterior () { 
-            let new_id = component.state[serviço].id_inicial_atual
+            let new_id = component.state[servico].id_inicial_atual
             if(button === 'anterior') {
                 new_id = new_id -1;
             } else {
                 new_id = new_id + 1;
             }
             component.setState(prevState => ({
-                [serviço]: {
-                    ...prevState[serviço],
+                [servico]: {
+                    ...prevState[servico],
                     id_inicial_atual: new_id
                 }
             }));
@@ -116,48 +116,48 @@ class CarrosselDeCards extends React.Component {
         return handleAnterior;
     }
 
-    renderButtonAnterior (serviço) {
-        if(this.state[serviço].id_inicial_atual === 0) {
+    renderButtonAnterior (servico) {
+        if(this.state[servico].id_inicial_atual === 0) {
             return (
-                <button className = 'inativo anterior'><img src = {require('../../mídia/ícones/seta.png')} alt = 'anterior'/></button>
+                <button className = 'inativo anterior'><img src = {require('../../resources/icons/seta.png')} alt = 'anterior'/></button>
             );
         } else {
             return (
-                <button className = 'ativo anterior' onClick = {this.handleFunctionCall(serviço, 'anterior')}><img src = {require('../../mídia/ícones/seta.png')} alt = 'anterior'/></button>
+                <button className = 'ativo anterior' onClick = {this.handleFunctionCall(servico, 'anterior')}><img src = {require('../../resources/icons/seta.png')} alt = 'anterior'/></button>
             );
         }
     }
 
-    renderButtonPróximo (serviço) {
-        let id_inicial = this.state[serviço].id_inicial_atual;
-        let id_final = id_inicial + this.state.núm_exibidos;
-        if(id_final === this.state[serviço].info_cardápios.length) {
+    renderButtonproximo (servico) {
+        let id_inicial = this.state[servico].id_inicial_atual;
+        let id_final = id_inicial + this.state.num_exibidos;
+        if(id_final === this.state[servico].info_cardapios.length) {
             return (
-                <button className = 'inativo próximo'><img src = {require('../../mídia/ícones/seta.png')} alt = 'anterior'/></button>
+                <button className = 'inativo proximo'><img src = {require('../../resources/icons/seta.png')} alt = 'anterior'/></button>
             );
         } else {
             return (
-                <button className = 'ativo próximo' onClick = {this.handleFunctionCall(serviço, 'próximo')}><img src = {require('../../mídia/ícones/seta.png')} alt = 'anterior'/></button>
+                <button className = 'ativo proximo' onClick = {this.handleFunctionCall(servico, 'proximo')}><img src = {require('../../resources/icons/seta.png')} alt = 'anterior'/></button>
             );
         }
     }
 
-    renderCardápios (serviço) {
-        let id_inicial = this.state[serviço].id_inicial_atual;
-        let id_final = id_inicial + this.state.núm_exibidos;
+    renderCardapios (servico) {
+        let id_inicial = this.state[servico].id_inicial_atual;
+        let id_final = id_inicial + this.state.num_exibidos;
         return (
-            this.state[serviço].info_cardápios.slice(id_inicial, id_final).map(cardápio => (
-                <CardDeCardápio cardápio = {cardápio}/>
+            this.state[servico].info_cardapios.slice(id_inicial, id_final).map(cardapio => (
+                <CardDeCardapio cardapio = {cardapio}/>
             ))
         );
     }
 
-    renderCarrossel (serviço) {
+    renderCarrossel (servico) {
         return (
-            <div className = 'cardápios'>
-                { this.renderButtonAnterior(serviço) }
-                { this.renderCardápios(serviço) }
-                { this.renderButtonPróximo(serviço) }
+            <div className = 'cardapios'>
+                { this.renderButtonAnterior(servico) }
+                { this.renderCardapios(servico) }
+                { this.renderButtonproximo(servico) }
             </div>
             
         );
@@ -165,12 +165,12 @@ class CarrosselDeCards extends React.Component {
 
     render () {
         return (
-            <section className = 'carrossel_serviço_presencial'>
-                <div className = 'título'>
-                    <img src = {require('../../mídia/ícones/cozinheiro_amarelo.png')} alt = 'cozinheiro'/>
+            <section className = 'carrossel_servico_presencial'>
+                <div className = 'titulo'>
+                    <img src = {require('../../resources/icons/cozinheiro_amarelo.png')} alt = 'cozinheiro'/>
                     <h2>Cardápios de prestadores que vão até você</h2>
                 </div>             
-                { this.renderCarrossel('serviço_presencial') }
+                { this.renderCarrossel('servico_presencial') }
             </section>
         );
     }

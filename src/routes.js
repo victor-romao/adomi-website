@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import Serviços from './pages/Serviços';
+import Servicos from './pages/Servicos';
 
 class Routes extends React.Component {
     constructor(props) {
@@ -11,8 +11,8 @@ class Routes extends React.Component {
     render () {
         return (
             <BrowserRouter>
-                <Route render = { props => <Home handleChangeServiço = {this.props.handleChangeServiço} serviço = { this.props.serviço } />} path = '/' exact />
-                <Route component = { Serviços } path = '/serviços/:id' />
+                <Route render = { props => <Home handleChangeServico = {this.props.handleChangeServico} servico = { this.props.servico } />} path = '/' exact />
+                <Route component = { Servicos } path = '/servicos/:id' />
             </BrowserRouter>
         );
     }

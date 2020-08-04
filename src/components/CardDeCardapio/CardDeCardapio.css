@@ -1,17 +1,17 @@
-.cardápio {
+.cardapio {
     width: 230px;
     font-family: 'Open Sans';
     border: 1px rgb(237, 235, 220) solid;
     border-radius: 20px;
 }
 
-.cardápio img {
+.cardapio img {
     width: 100%;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 }
 
-.informações {
+.informacoes {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,7 +20,7 @@
     padding-bottom: 15px;
 }
 
-.tipo_de_comida_e_avaliação {
+.tipo_de_comida_e_avaliacao {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -28,29 +28,29 @@
     padding: 5px 0 10px 0;
 }
 
-.tipo_de_comida_e_avaliação h3 {
+.tipo_de_comida_e_avaliacao h3 {
     font-weight: bold;
     color: rgb(151, 153, 155);
 }
 
-.avaliação {
+.avaliacao {
     display: flex;
     align-items: center;
 }
 
-.avaliação img {
+.avaliacao img {
     width: 15px;
     border-radius: 0;
 }
 
-.cardápio .avaliação p {
+.cardapio .avaliacao p {
     color: rgb(252, 209, 22);
     font-weight: bold;
     font-size: 16px;
     padding: 0;
 }
 
-.cardápio h4 {
+.cardapio h4 {
     color: black;
     font-size: 16px;
     font-weight: bold;
@@ -59,7 +59,7 @@
     padding-bottom: 5px;
 }
 
-.cardápio p {
+.cardapio p {
     color: rgb(151, 153, 155);
     font-size: 13px;
     width: 100%;

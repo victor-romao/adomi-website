@@ -1,4 +1,4 @@
-.atração_prestador {
+.atracao_prestador {
     background-color: rgb(239, 106, 0);
     font-family: 'Open Sans';
     color: white;
@@ -6,38 +6,38 @@
     height: 430px;
 }
 
-.atração_prestador .container {
+.atracao_prestador .container {
     display: flex;
     justify-content: space-between;
     width: 95%;
     margin: 120px auto 0 auto;
 }
 
-.atração_prestador img {
+.atracao_prestador img {
     height: 350px;
     position: absolute;
     top: 40px;
 }
 
-.atração_prestador .mensagem_central {
+.atracao_prestador .mensagem_central {
     margin-top: 60px;
     width: 380px;
 }
 
-.atração_prestador .mensagem_central h2{ 
+.atracao_prestador .mensagem_central h2{ 
     font-size: 30px;
     margin-bottom: 20px;
 }
 
-.atração_prestador .mensagem_central .bold{
+.atracao_prestador .mensagem_central .bold{
     font-weight: bold;
 }
 
-.atração_prestador .mensagem_central p {
+.atracao_prestador .mensagem_central p {
     font-size: 24px;
 }
 
-.atração_prestador .motivos {
+.atracao_prestador .motivos {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -45,29 +45,29 @@
     bottom: 50px;
 }
 
-.atração_prestador .motivos img {
+.atracao_prestador .motivos img {
     height: 180px;
     position: static;
     margin-bottom: 20px;
 }
 
-.atração_prestador .motivos ul li {
+.atracao_prestador .motivos ul li {
     font-size: 18px;
     padding: 10px;
 }
 
-.atração_prestador .motivos ul li:before {
+.atracao_prestador .motivos ul li:before {
     display: inline-block;
     content: '';
     width: 18px;
     height: 10px;
     background-size: 18px;
-    background-image:  url(../../mídia/logo/sorriso-amarelo.png);
+    background-image:  url(../../resources/logo/sorriso-amarelo.png);
     background-repeat: no-repeat;
     margin-right: 5px;
 }
 
-.atração_prestador .motivos button {
+.atracao_prestador .motivos button {
     background-color: rgb(255, 182, 0);
     color: white;
     border: 2px white solid;
@@ -78,7 +78,7 @@
     cursor: pointer;
 }
 
-.atração_prestador .motivos button:hover {
+.atracao_prestador .motivos button:hover {
     background-color: rgb(255, 195, 0);
 }
 

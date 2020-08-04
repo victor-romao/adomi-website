@@ -98,7 +98,7 @@ form.barra_de_busca_reduzida {
     text-align: center;
 }
 
-.barra_de_busca_reduzida .localização {
+.barra_de_busca_reduzida .localizacao {
     width: 100px;
 }
 
@@ -106,11 +106,11 @@ form.barra_de_busca_reduzida {
     width: 150px;
 }
 
-.barra_de_busca_reduzida .número_convidados {
+.barra_de_busca_reduzida .numero_convidados {
     width: 120px;
 }
 
-.barra_de_busca_reduzida .busca_específica {
+.barra_de_busca_reduzida .busca_especifica {
     width: 190px;
 }
 

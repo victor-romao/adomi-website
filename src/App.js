@@ -5,21 +5,21 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      serviço: 'serviço_presencial'
+      servico: 'servico_presencial'
     }
-    this.handleChangeServiço = this.handleChangeServiço.bind(this);
+    this.handleChangeServico = this.handleChangeServico.bind(this);
   }
 
-  handleChangeServiço (serviço) {
+  handleChangeServico (servico) {
     this.setState({
-      serviço: serviço
+      servico: servico
     });
   }
 
   render() {
     return (
     <div className="App">
-      <Routes	handleChangeServiço = { this.handleChangeServiço } serviço = { this.state.serviço }/>
+      <Routes	handleChangeServico = { this.handleChangeServico } servico = { this.state.servico }/>
     </div>
     );
   }

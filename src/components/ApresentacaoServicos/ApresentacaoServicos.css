@@ -2,7 +2,7 @@ h1, h2 {
     font-family: 'Baloo Paaji 2';
 }
 
-.título_e_serviços div {
+.titulo_e_servicos div {
     text-align: center;
 }
 
@@ -22,22 +22,22 @@ h1, h2 {
     top: 160px;
 }
 
-.título_e_serviços h1 {
+.titulo_e_servicos h1 {
     font-size: 30px;
     font-weight: bold;
     color: rgb(239, 106, 0);
 }
 
-.título_e_serviços h2 {
+.titulo_e_servicos h2 {
     font-size: 22px;
     color: rgb(124, 124, 124);
 }
 
-.título {
+.titulo {
     margin-top: 45px;
 }
 
-.serviços {
+.servicos {
     display: flex;
     justify-content: center;
     font-family: 'Open Sans';
@@ -47,7 +47,7 @@ h1, h2 {
     margin-bottom: 15px;
 }
 
-.serviços div {
+.servicos div {
     display: flex;
     align-items: center;
     margin: 0 30px;
@@ -55,16 +55,16 @@ h1, h2 {
     cursor: pointer;
 }
 
-.serviços div:hover {
+.servicos div:hover {
     color: rgb(165, 165, 165);
 }
 
-.serviços div img {
+.servicos div img {
     height: 20px;
     padding-right: 5px;
 }
 
-.serviços div span {
+.servicos div span {
     margin: 5px;
     padding: 4px;
     font-size: 12px;
@@ -74,11 +74,11 @@ h1, h2 {
     border-radius: 5px;
 }
 
-.serviços .ativo {
+.servicos .ativo {
     border-bottom: 3px rgb(239, 106, 0) solid;
 }
 
-.serviços .inativo {
+.servicos .inativo {
     border-bottom: 3px white solid;
 }
 
@@ -100,7 +100,7 @@ h1, h2 {
     margin-left: -35%;
 }
 
-.descrição {
+.descricao {
     display: block;
     font-family: 'Open Sans';
     text-align: center;
@@ -108,13 +108,13 @@ h1, h2 {
     margin: 0 auto;
 }
 
-.descrição p {
+.descricao p {
     font-size: 20px;
     color: rgb(124, 124, 124);
     margin-bottom: 20px;
 }
 
-.descrição a {
+.descricao a {
     font-size: 18px;
     color: rgb(239, 106, 0);
     border-bottom: 0.5px rgb(165, 165, 165) solid;

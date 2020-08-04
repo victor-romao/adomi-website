@@ -1,4 +1,4 @@
-.links_rápidos {
+.links_rapidos {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6,7 +6,7 @@
     margin: 60px auto;
 }
 
-.links_rápidos h2 {
+.links_rapidos h2 {
     color: rgb(239, 106, 0);
     font-size: 30px;
     font-family: 'Baloo Paaji 2';
@@ -14,7 +14,7 @@
     margin-bottom: 20px;
 }
 
-.links_rápidos .links_por_serviço {
+.links_rapidos .links_por_servico {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -22,25 +22,25 @@
     width: 100%;
 }
 
-.links_por_serviço .título {
+.links_por_servico .titulo {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
 }
 
-.links_por_serviço .título img {
+.links_por_servico .titulo img {
     height: 26px;
     padding-right: 5px;
 }
 
-.links_por_serviço .título h3 {
+.links_por_servico .titulo h3 {
     font-family: 'Baloo Paaji 2';
     font-weight: bold;
     font-size: 22px;
     color: rgb(151, 153, 155);
 }
 
-.links_por_serviço .container {
+.links_por_servico .container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;

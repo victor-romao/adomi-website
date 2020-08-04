@@ -8,22 +8,22 @@ class ComoFunciona extends React.Component {
                 <h2>Por que contratar com a Adomi?</h2>
                 <div className = 'proposta_de_valor'>
                     <div className = 'praticidade'>
-                        <div className = 'ícone'>
-                            <img src = {require('../../mídia/ícones/praticidade.png')} alt = 'Informações em um só lugar'/>
+                        <div className = 'icon'>
+                            <img src = {require('../../resources/icons/praticidade.png')} alt = 'Informacoes em um só lugar'/>
                             <h3>Praticidade</h3>
                         </div>
                         <p>Pesquise, compare, selecione e contrate prestadores para o seu evento em um só lugar.</p>
                     </div>
-                    <div className = 'segurança'>
-                        <div className = 'ícone'>
-                            <img src = {require('../../mídia/ícones/segurança.png')} alt = 'Segurança do seu dinheiro'/>
+                    <div className = 'seguranca'>
+                        <div className = 'icon'>
+                            <img src = {require('../../resources/icons/seguranca.png')} alt = 'Segurança do seu dinheiro'/>
                             <h3>Segurança</h3>
                         </div>
                         <p>Pagamento através de uma plataforma segura, com repasse ao prestador apenas após a realização do evento.</p>
                     </div>
                     <div className = 'flexibilidade'>
-                        <div className = 'ícone'>
-                            <img src = {require('../../mídia/ícones/flexibilidade.png')} alt = 'Flexibilidade para alterações'/>
+                        <div className = 'icon'>
+                            <img src = {require('../../resources/icons/flexibilidade.png')} alt = 'Flexibilidade para alterações'/>
                             <h3>Flexibilidade</h3>
                         </div>
                         <p>Altere ou cancele sua reserva sem pagar nada até 30 dias antes da data do seu evento.</p>
@@ -31,7 +31,7 @@ class ComoFunciona extends React.Component {
                 </div>
                 <div className = 'passo-a-passo'>
                     <h4>Como funciona?</h4>
-                    <img src = {require('../../mídia/imagens/como_funciona_a_adomi.png')} alt = 'Passo a passo: 1- informe os dados do evento; 2 - selecione os serviços desejados; 3 - pague e reserve o seu evento; 4 - altere sua reserva quando quiser; e 5 - aproveite o evento sem se preocupar'/>
+                    <img src = {require('../../resources/imagens/como_funciona_a_adomi.png')} alt = 'Passo a passo: 1- informe os dados do evento; 2 - selecione os servicos desejados; 3 - pague e reserve o seu evento; 4 - altere sua reserva quando quiser; e 5 - aproveite o evento sem se preocupar'/>
                 </div>
 
             </section>

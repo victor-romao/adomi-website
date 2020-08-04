@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { Link } from 'react-router-dom';
-import './BarraDeNavegação.css';
+import './BarraDeNavegacao.css';
 import BarraDeBusca from '../BarraDeBusca/BarraDeBusca';
 
 
-class BarraDeNavegação extends React.Component {
+class BarraDeNavegacao extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -22,7 +22,7 @@ class BarraDeNavegação extends React.Component {
                 return (
                     
                     <ReactCSSTransitionGroup 
-                    transitionName = 'animação_info_covid' 
+                    transitionName = 'animacao_info_covid' 
                     transitionAppear={true}
                     transitionAppearTimeout={500}
                     transitionEnter={true}
@@ -44,13 +44,13 @@ class BarraDeNavegação extends React.Component {
         if(render) {
             return (
                 <ReactCSSTransitionGroup 
-                transitionName = 'animação_barra_busca' 
+                transitionName = 'animacao_barra_busca' 
                 transitionAppear = {true} 
                 transitionAppearTimeout={500} 
                 transitionEnter={false} 
                 transitionLeave={true}>
                     <div className = 'barra_de_busca'>
-                        <BarraDeBusca formato = 'reduzido' campos = 'padrão' serviço = { this.props.serviço } />
+                        <BarraDeBusca formato = 'reduzido' campos = 'padrao' servico = { this.props.servico } />
                     </div>
                 </ReactCSSTransitionGroup>
             );
@@ -83,16 +83,16 @@ class BarraDeNavegação extends React.Component {
                 <div className = 'navbar'>
                     <div className = 'container'>
                         <div className = 'logo'>
-                            <Link to = '/'><img src={require('../../mídia/logo/adomi-o-seu-evento-a-domicílio.png')} alt='Adomi, o seu evento a domicílio'/></Link>
+                            <Link to = '/'><img src={require('../../resources/logo/adomi-o-seu-evento-a-domicilio.png')} alt='Adomi, o seu evento a domicílio'/></Link>
                         </div>
                         { this.render_barra_de_busca(this.state.busca) }
                         <div className = 'links'>
                             <a>Anuncie seus Serviços</a>
                             <a>Ajuda</a>
-                            <img src = {require('../../mídia/ícones/salvos.png')} alt = 'itens salvos'/>
-                            <img src = {require('../../mídia/ícones/cesta.png')} alt = 'cesta de compras'/>
+                            <img src = {require('../../resources/icons/salvos.png')} alt = 'itens salvos'/>
+                            <img src = {require('../../resources/icons/cesta.png')} alt = 'cesta de compras'/>
                             <div className = 'login'>
-                                <img src = {require('../../mídia/ícones/login.png')} alt = 'login'/>
+                                <img src = {require('../../resources/icons/login.png')} alt = 'login'/>
                                 <p>Entrar</p>
                             </div>
                         </div>
@@ -103,4 +103,4 @@ class BarraDeNavegação extends React.Component {
     }
 }
 
-export default BarraDeNavegação;
+export default BarraDeNavegacao;

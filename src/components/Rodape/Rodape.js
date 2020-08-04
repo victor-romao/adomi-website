@@ -1,13 +1,13 @@
 import React from 'react';
-import './Rodapé.css';
+import './Rodape.css';
 
-class Rodapé extends React.Component {
+class Rodape extends React.Component {
     render () {
         return (
             <footer>
                 <div className = 'principal'>
                     <div className = 'adomi container'>
-                        <a><img src={require('../../mídia/logo/adomi-o-seu-evento-a-domicílio.png')} alt='Adomi, o seu evento a domicílio'/></a>
+                        <a><img src={require('../../resources/logo/adomi-o-seu-evento-a-domicilio.png')} alt='Adomi, o seu evento a domicílio'/></a>
                         <p>Usamos tecnologia para unir quem sonha com o evento perfeito e quem o realiza.</p>
                     </div>
                     <div className = 'saiba_mais container'>
@@ -34,15 +34,15 @@ class Rodapé extends React.Component {
                         </ul>
                     </div>
                 </div>
-                <div className = 'secundário'>
+                <div className = 'secundario'>
                     <p>© 2020 Adomi Intermediação de Eventos Ltda. CNPJ xxxxxxxxxxx - <a>Termos e Privacidade</a></p>
                     <div className = 'redes_sociais'>
-                        <a><img src = {require('../../mídia/ícones/facebook.png')} /></a>
-                        <a><img src = {require('../../mídia/ícones/instagram.png')} /></a>
+                        <a><img src = {require('../../resources/icons/facebook.png')} /></a>
+                        <a><img src = {require('../../resources/icons/instagram.png')} /></a>
                     </div>
                 </div>
             </footer>
         );
     }
 }
-export default Rodapé;
+export default Rodape;

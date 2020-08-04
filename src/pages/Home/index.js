@@ -1,12 +1,12 @@
 import React from 'react';
 import './index.css';
-import BarraDeNavegação from '../../components/BarraDeNavegação/BarraDeNavegação';
-import ApresentaçãoServiços from '../../components/ApresentaçãoServiços/ApresentaçãoServiços';
+import BarraDeNavegacao from '../../components/BarraDeNavegacao/BarraDeNavegacao';
+import ApresentacaoServicos from '../../components/ApresentacaoServicos/ApresentacaoServicos';
 import ComoFunciona from '../../components/ComoFunciona/ComoFunciona';
 import CarrosselDeCards from '../../components/CarrosselDeCards/CarrosselDeCards';
-import AtraçãoPrestador from '../../components/AtraçãoPrestador/AtraçãoPrestador';
-import LinksRápidos from '../../components/LinksRápidos/LinksRápidos';
-import Rodapé from '../../components/Rodapé/Rodapé';
+import AtracaoPrestador from '../../components/AtracaoPrestador/AtracaoPrestador';
+import LinksRapidos from '../../components/LinksRapidos/LinksRapidos';
+import Rodape from '../../components/Rodape/Rodape';
 
 class Home extends React.Component {
   constructor(props){
@@ -16,13 +16,13 @@ class Home extends React.Component {
   render() {
     return (
     <div className="Home">
-      <BarraDeNavegação exibir_info_covid = { true } busca = { false } serviço = { this.props.serviço } />
-      <ApresentaçãoServiços handleChangeServiço = {this.props.handleChangeServiço} serviço = { this.props.serviço } />
+      <BarraDeNavegacao exibir_info_covid = { true } busca = { false } servico = { this.props.servico } />
+      <ApresentacaoServicos handleChangeServico = {this.props.handleChangeServico} servico = { this.props.servico } />
       <ComoFunciona />
       <CarrosselDeCards />
-      <AtraçãoPrestador />
-      <LinksRápidos />
-      <Rodapé	/>
+      <AtracaoPrestador />
+      <LinksRapidos />
+      <Rodape	/>
     </div>
     );
   }
