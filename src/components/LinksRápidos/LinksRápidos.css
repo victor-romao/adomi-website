@@ -1,0 +1,47 @@
+.links_rápidos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 84%;
+    margin: 60px auto;
+}
+
+.links_rápidos h2 {
+    color: rgb(239, 106, 0);
+    font-size: 30px;
+    font-family: 'Baloo Paaji 2';
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.links_rápidos .links_por_serviço {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 100%;
+}
+
+.links_por_serviço .título {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.links_por_serviço .título img {
+    height: 26px;
+    padding-right: 5px;
+}
+
+.links_por_serviço .título h3 {
+    font-family: 'Baloo Paaji 2';
+    font-weight: bold;
+    font-size: 22px;
+    color: rgb(151, 153, 155);
+}
+
+.links_por_serviço .container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}

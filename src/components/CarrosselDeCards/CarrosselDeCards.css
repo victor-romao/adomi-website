@@ -1,0 +1,64 @@
+.carrossel_serviço_presencial {
+    width: 84%;
+    margin: 50px auto;
+}
+
+.cardápios {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px auto;
+}
+
+.cardápios button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    background-color: white;
+    border-radius: 30px;
+    border: 3px rgb(237, 235, 220) solid;
+    cursor: pointer;
+    outline: none;
+}
+
+.cardápios button:hover {
+    background-color: rgb(237, 235, 220);
+}
+
+.cardápios .inativo {
+    background-color: rgb(240, 240, 240);
+    border: 3px rgb(219, 219, 219) solid;
+    cursor: default;
+}
+
+.cardápios .inativo:hover {
+    background-color: rgb(240, 240, 240);
+}
+
+.cardápios button img {
+    height: 30px;
+    padding-right: 5px;
+}
+
+.cardápios .próximo img {
+    transform: rotate(180deg);
+}
+
+.carrossel_serviço_presencial .título h2 {
+    color: rgb(255, 182, 0);
+    font-size: 30px;
+    font-family: 'Baloo Paaji 2';
+    font-weight: bold;
+}
+
+.carrossel_serviço_presencial .título img {
+    height: 25px;
+}
+
+.carrossel_serviço_presencial .título {
+    display: flex;
+    align-items: flex-start;
+    padding: 15px 0;
+}

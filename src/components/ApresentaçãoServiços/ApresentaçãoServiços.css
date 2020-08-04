@@ -1,0 +1,124 @@
+h1, h2 {
+    font-family: 'Baloo Paaji 2';
+}
+
+.título_e_serviços div {
+    text-align: center;
+}
+
+.sorriso {
+    position: absolute;
+    
+}
+
+.sorriso.amarelo {
+    width: 14%;
+    top: 100px;
+}
+
+.sorriso.laranja {
+    width: 7%;
+    left: 93%;
+    top: 160px;
+}
+
+.título_e_serviços h1 {
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(239, 106, 0);
+}
+
+.título_e_serviços h2 {
+    font-size: 22px;
+    color: rgb(124, 124, 124);
+}
+
+.título {
+    margin-top: 45px;
+}
+
+.serviços {
+    display: flex;
+    justify-content: center;
+    font-family: 'Open Sans';
+    color: black;
+    font-size: 18px;
+    margin-top: 45px;
+    margin-bottom: 15px;
+}
+
+.serviços div {
+    display: flex;
+    align-items: center;
+    margin: 0 30px;
+    padding-bottom: 3px;
+    cursor: pointer;
+}
+
+.serviços div:hover {
+    color: rgb(165, 165, 165);
+}
+
+.serviços div img {
+    height: 20px;
+    padding-right: 5px;
+}
+
+.serviços div span {
+    margin: 5px;
+    padding: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: rgb(255, 182, 0);
+    color: white;
+    border-radius: 5px;
+}
+
+.serviços .ativo {
+    border-bottom: 3px rgb(239, 106, 0) solid;
+}
+
+.serviços .inativo {
+    border-bottom: 3px white solid;
+}
+
+.barra_de_busca {
+    margin: 20px 0 5px 0;
+    position: relative;
+}
+
+.barra_de_busca img {
+    margin: 0 8%;
+    width: 84%;
+    z-index: -1;
+}
+
+.barra_de_busca form {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    margin-left: -35%;
+}
+
+.descrição {
+    display: block;
+    font-family: 'Open Sans';
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.descrição p {
+    font-size: 20px;
+    color: rgb(124, 124, 124);
+    margin-bottom: 20px;
+}
+
+.descrição a {
+    font-size: 18px;
+    color: rgb(239, 106, 0);
+    border-bottom: 0.5px rgb(165, 165, 165) solid;
+    cursor: pointer;
+    padding: 2px;
+    text-decoration: solid;
+}

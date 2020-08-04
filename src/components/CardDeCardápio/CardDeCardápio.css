@@ -1,0 +1,125 @@
+.cardápio {
+    width: 230px;
+    font-family: 'Open Sans';
+    border: 1px rgb(237, 235, 220) solid;
+    border-radius: 20px;
+}
+
+.cardápio img {
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.informações {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 94%;
+    margin: 0 auto;
+    padding-bottom: 15px;
+}
+
+.tipo_de_comida_e_avaliação {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 5px 0 10px 0;
+}
+
+.tipo_de_comida_e_avaliação h3 {
+    font-weight: bold;
+    color: rgb(151, 153, 155);
+}
+
+.avaliação {
+    display: flex;
+    align-items: center;
+}
+
+.avaliação img {
+    width: 15px;
+    border-radius: 0;
+}
+
+.cardápio .avaliação p {
+    color: rgb(252, 209, 22);
+    font-weight: bold;
+    font-size: 16px;
+    padding: 0;
+}
+
+.cardápio h4 {
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+    text-align: left;
+    padding-bottom: 5px;
+}
+
+.cardápio p {
+    color: rgb(151, 153, 155);
+    font-size: 13px;
+    width: 100%;
+    text-align: left;
+    padding-bottom: 15px;
+}
+
+.custos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.custos div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.custos p {
+    padding: 0;
+}
+
+.custos .grátis {
+    color: rgb(146, 208, 80);
+}
+
+.custos .valor_por_pessoa {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.valor_por_pessoa .valor {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    font-weight: bold;
+    color: rgb(151, 153, 155);
+    padding-bottom: 5px;
+}
+
+.valor_por_pessoa .valor p {
+    font-size: 22px;
+}
+
+.valor_por_pessoa .valor span, .valor_por_pessoa .por_pessoa {
+    font-size: 13px;
+}
+
+.valor_por_pessoa p, .valor_por_pessoa span {
+    text-align: right;
+}
+
+.custos .valor_total {
+    color: rgb(239, 106, 0);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.custos .valor_total span {
+    font-weight: normal;
+}

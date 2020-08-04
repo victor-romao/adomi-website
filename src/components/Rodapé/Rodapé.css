@@ -1,0 +1,67 @@
+footer {
+    background-color: rgb(237, 235, 220);
+    color: rgb(151, 153, 155);
+    font-size: 20px;
+    border-top: 1px rgb(219, 219, 219) solid;
+}
+
+footer .principal, footer .secundário {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 84%;
+    margin: 0 auto;
+}
+
+
+footer .principal {
+    padding: 50px 0;
+    border-bottom: 1px rgb(219, 219, 219) solid;
+}
+
+.principal .container {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+
+.principal .adomi p {
+    width: 260px;
+}
+
+.principal .adomi img {
+    height: 50px;
+    margin-bottom: 2px;
+    cursor: pointer;
+}
+
+.principal .container h6 {
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 18px;
+}
+
+.principal .container li {
+    padding: 3px;
+    cursor: pointer;
+}
+
+footer .secundário {
+    padding: 15px 0;
+}
+
+footer .secundário p {
+    font-size: 14px;
+    width: 300px;
+}
+
+footer .secundário p a {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+footer .secundário img {
+    height: 40px;
+    padding-right: 5px;
+    cursor: pointer;
+}

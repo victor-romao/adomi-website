@@ -1,0 +1,84 @@
+section.como_funciona {
+    background-color: rgb(239, 51, 64);
+    color: white;
+    text-align: center;
+    font-family: 'Open Sans';
+    margin-top: 50px;
+    padding: 30px;
+}
+
+.como_funciona h2 {
+    color: rgb(255, 182, 0);
+    font-size: 30px;
+    font-family: 'Baloo Paaji 2';
+    font-weight: bold;
+    padding: 15px 0 30px 0;
+}
+
+.como_funciona div{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.como_funciona .proposta_de_valor {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.proposta_de_valor div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 230px;
+    margin: 0;
+}
+
+.proposta_de_valor .segurança {
+    width: 300px;
+}
+
+.proposta_de_valor div div{
+    width: 140px;
+    border-radius: 20px;
+    padding: 10px 0 7px 0;
+    background-color: rgb(237, 235, 220);
+}
+
+.proposta_de_valor div p {
+    padding: 5px;
+    font-size: 18px;
+}
+
+.proposta_de_valor img {
+    height: 80px;
+}
+
+.proposta_de_valor h3 {
+    color: rgb(151, 153, 155);
+    font-weight: bold;
+    font-family: 'Baloo Paaji 2';
+    font-size: 20px;
+    padding-top: 5px;
+}
+
+.como_funciona .passo-a-passo {
+    margin-top: 15px;
+    margin-bottom: 20px;
+    background-color: white;
+    border-radius: 40px;
+    padding: 10px 0 5px 0;
+    box-sizing: border-box;
+
+}
+
+.passo-a-passo h4 {
+    color: black;
+    font-weight: bold;
+    padding-bottom: 20px;
+    font-size: 22px;
+}
+
+.passo-a-passo img {
+    height: 170px;
+}
