@@ -5,20 +5,7 @@ nav {
     z-index: 10;
 }
 
-.info_covid {
-    display: flex;
-    justify-content: center;
-    background-color: rgb(239, 235, 220);
-    font-family: 'Open Sans';
-    font-size: 14px;
-    padding: 7px;
-}
 
-.info_covid a{
-    color: blue;
-    text-decoration: underline;
-    cursor: pointer;
-}
 
 .navbar {
     width: 100%;
@@ -54,6 +41,11 @@ nav .container {
     font-weight: bold;
     font-size: 18px;
     color: rgb(82, 82, 82);
+}
+
+.links a {
+    color: rgb(82, 82, 82);
+    text-decoration: solid;
 }
 
 .links  * {
@@ -109,14 +101,7 @@ nav .container {
 }
 
 
-.animacao_info_covid-appear {
-    height: 0px;
-}
 
-.animacao_info_covid-appear.animacao_info_covid-appear-active {
-    height: 14px;
-    transition: all 0.5s;
-}
 
 .animacao_barra_busca-appear {
     opacity: 0.01;
@@ -124,5 +109,5 @@ nav .container {
 
 .animacao_barra_busca-appear.animacao_barra_busca-appear-active {
     opacity: 1;
-    transition: opacity 0.5s;
+    transition: opacity 1.2s;
 }

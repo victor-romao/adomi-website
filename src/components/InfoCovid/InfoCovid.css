@@ -1,0 +1,26 @@
+.info_covid {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(239, 235, 220);
+    font-family: 'Open Sans';
+    font-size: 14px;
+    padding: 7px;
+}
+
+.info_covid a {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.animacao_info_covid-appear {
+    height: 0px;
+}
+
+.animacao_info_covid-appear.animacao_info_covid-appear-active {
+    height: 14px;
+    transition: all 1.5s;
+}

@@ -1,4 +1,4 @@
-.carrossel_servico_presencial {
+.carrossel {
     width: 84%;
     margin: 50px auto;
 }
@@ -46,19 +46,21 @@
     transform: rotate(180deg);
 }
 
-.carrossel_servico_presencial .titulo h2 {
+.carrossel .titulo h2 {
     color: rgb(255, 182, 0);
     font-size: 30px;
     font-family: 'Baloo Paaji 2';
     font-weight: bold;
 }
 
-.carrossel_servico_presencial .titulo img {
+.carrossel .titulo img {
     height: 25px;
+    padding-right: 2px;
 }
 
-.carrossel_servico_presencial .titulo {
+.carrossel .titulo {
     display: flex;
+    flex-direction: row;
     align-items: flex-start;
     padding: 15px 0;
 }

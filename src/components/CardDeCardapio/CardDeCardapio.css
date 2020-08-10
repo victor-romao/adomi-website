@@ -5,6 +5,10 @@
     border-radius: 20px;
 }
 
+.cardapio a {
+    text-decoration: solid;
+}
+
 .cardapio img {
     width: 100%;
     border-top-left-radius: 20px;

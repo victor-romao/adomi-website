@@ -3,6 +3,7 @@ footer {
     color: rgb(151, 153, 155);
     font-size: 20px;
     border-top: 1px rgb(219, 219, 219) solid;
+    font-family: 'Open Sans';
 }
 
 footer .principal, footer .secundario {
@@ -26,7 +27,7 @@ footer .principal {
 }
 
 .principal .adomi p {
-    width: 260px;
+    width: 270px;
 }
 
 .principal .adomi img {
@@ -46,6 +47,11 @@ footer .principal {
     cursor: pointer;
 }
 
+.principal .container li a {
+    text-decoration: solid;
+    color: rgb(151, 153, 155);
+}
+
 footer .secundario {
     padding: 15px 0;
 }
@@ -58,10 +64,16 @@ footer .secundario p {
 footer .secundario p a {
     text-decoration: underline;
     cursor: pointer;
+    color: rgb(151, 153, 155);
 }
 
 footer .secundario img {
     height: 40px;
     padding-right: 5px;
     cursor: pointer;
+}
+
+.redes_sociais a {
+    color: rgb(151, 153, 155);
+    text-decoration: solid;
 }

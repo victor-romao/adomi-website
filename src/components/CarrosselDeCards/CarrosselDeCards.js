@@ -7,10 +7,17 @@ class CarrosselDeCards extends React.Component {
         super(props);
         this.state = {
             num_exibidos: 4,
+            servico: this.props.servico,
             servico_presencial: {
                 id_inicial_atual: 0,
+                info_titulo: {
+                    img_name: 'cozinheiro_amarelo.png',
+                    img_alt: 'cozinheiro',
+                    titulo: 'Cardápios de prestadores que vão até você'
+                },
                 info_cardapios: [
                     {
+                        id: 1,
                         img_name: 'Crepe Tradicional.png', 
                         tipo_de_comida: 'Crepe',
                         avaliacao: '3.9',
@@ -21,6 +28,7 @@ class CarrosselDeCards extends React.Component {
                         valor_por_pessoa: 100
                     },
                     {
+                        id: 2,
                         img_name: 'Churrasco Premium.png', 
                         tipo_de_comida: 'Churrasco',
                         avaliacao: '4.9',
@@ -31,6 +39,7 @@ class CarrosselDeCards extends React.Component {
                         valor_por_pessoa: 100
                     },
                     {
+                        id: 3,
                         img_name: 'Pizza Caseira Basica.png', 
                         tipo_de_comida: 'Pizza',
                         avaliacao: '4.5',
@@ -41,6 +50,7 @@ class CarrosselDeCards extends React.Component {
                         valor_por_pessoa: 30
                     },
                     {
+                        id: 4,
                         img_name: 'Rodizio Japones.png', 
                         tipo_de_comida: 'Japonesa',
                         avaliacao: '4.2',
@@ -51,6 +61,7 @@ class CarrosselDeCards extends React.Component {
                         valor_por_pessoa: 80
                     },
                     {
+                        id: 1,
                         img_name: 'Crepe Tradicional.png', 
                         tipo_de_comida: 'Crepe',
                         avaliacao: '3.9',
@@ -61,6 +72,7 @@ class CarrosselDeCards extends React.Component {
                         valor_por_pessoa: 100
                     },
                     {
+                        id: 2,
                         img_name: 'Churrasco Premium.png', 
                         tipo_de_comida: 'Churrasco',
                         avaliacao: '4.9',
@@ -71,6 +83,7 @@ class CarrosselDeCards extends React.Component {
                         valor_por_pessoa: 100
                     },
                     {
+                        id: 3,
                         img_name: 'Pizza Caseira Basica.png', 
                         tipo_de_comida: 'Pizza',
                         avaliacao: '4.5',
@@ -81,6 +94,7 @@ class CarrosselDeCards extends React.Component {
                         valor_por_pessoa: 30
                     },
                     {
+                        id: 4,
                         img_name: 'Rodizio Japones.png', 
                         tipo_de_comida: 'Japonesa',
                         avaliacao: '4.2',
@@ -91,7 +105,204 @@ class CarrosselDeCards extends React.Component {
                         valor_por_pessoa: 80
                     }
                 ]
-            }
+            },
+            entrega_no_evento: {
+                id_inicial_atual: 0,
+                info_titulo: {
+                    img_name: 'entrega_amarelo.png',
+                    img_alt: 'entrega',
+                    titulo: 'Encomende e receba tudo pronto no seu evento'
+                },
+                info_cardapios: [
+                    {
+                        id: 2,
+                        img_name: 'Churrasco Premium.png', 
+                        tipo_de_comida: 'Churrasco',
+                        avaliacao: '4.9',
+                        titulo: 'Churrasco Premium',
+                        descricao: 'Cortes especiais como chorizo e tomahawk preparados na brasa.',
+                        custo_logistico: 100,
+                        valor_total: 3100.00,
+                        valor_por_pessoa: 100
+                    },
+                    {
+                        id: 3,
+                        img_name: 'Pizza Caseira Basica.png', 
+                        tipo_de_comida: 'Pizza',
+                        avaliacao: '4.5',
+                        titulo: 'Pizza Caseira Básica',
+                        descricao: 'Deliciosa pizza de massa fina e crocante de sabores tradicionais.',
+                        custo_logistico: 0,
+                        valor_total: 900.00,
+                        valor_por_pessoa: 30
+                    },
+                    {
+                        id: 4,
+                        img_name: 'Rodizio Japones.png', 
+                        tipo_de_comida: 'Japonesa',
+                        avaliacao: '4.2',
+                        titulo: 'Rodízio Japonês',
+                        descricao: 'O tradicional rodízio japonês dos restaurantes no seu evento.',
+                        custo_logistico: 100,
+                        valor_total: 2400.00,
+                        valor_por_pessoa: 80
+                    },
+                    {
+                        id: 1,
+                        img_name: 'Crepe Tradicional.png', 
+                        tipo_de_comida: 'Crepe',
+                        avaliacao: '3.9',
+                        titulo: 'Crepe Tradicional',
+                        descricao: 'Variados sabores de crepes doces e salgados para você escolher.',
+                        custo_logistico: 0,
+                        valor_total: 1350.00,
+                        valor_por_pessoa: 100
+                    },
+                    {
+                        id: 2,
+                        img_name: 'Churrasco Premium.png', 
+                        tipo_de_comida: 'Churrasco',
+                        avaliacao: '4.9',
+                        titulo: 'Churrasco Premium',
+                        descricao: 'Cortes especiais como chorizo e tomahawk preparados na brasa.',
+                        custo_logistico: 100,
+                        valor_total: 3100.00,
+                        valor_por_pessoa: 100
+                    },
+                    {
+                        id: 3,
+                        img_name: 'Pizza Caseira Basica.png', 
+                        tipo_de_comida: 'Pizza',
+                        avaliacao: '4.5',
+                        titulo: 'Pizza Caseira Básica',
+                        descricao: 'Deliciosa pizza de massa fina e crocante de sabores tradicionais.',
+                        custo_logistico: 0,
+                        valor_total: 900.00,
+                        valor_por_pessoa: 30
+                    },
+                    {
+                        id: 4,
+                        img_name: 'Rodizio Japones.png', 
+                        tipo_de_comida: 'Japonesa',
+                        avaliacao: '4.2',
+                        titulo: 'Rodízio Japonês',
+                        descricao: 'O tradicional rodízio japonês dos restaurantes no seu evento.',
+                        custo_logistico: 100,
+                        valor_total: 2400.00,
+                        valor_por_pessoa: 80
+                    },
+                    {
+                        id: 1,
+                        img_name: 'Crepe Tradicional.png', 
+                        tipo_de_comida: 'Crepe',
+                        avaliacao: '3.9',
+                        titulo: 'Crepe Tradicional',
+                        descricao: 'Variados sabores de crepes doces e salgados para você escolher.',
+                        custo_logistico: 0,
+                        valor_total: 1350.00,
+                        valor_por_pessoa: 100
+                    }
+                ]
+            },
+            solucoes_covid: {
+                id_inicial_atual: 0,
+                info_titulo: {
+                    img_name: 'ideia_amarelo.png',
+                    img_alt: 'ideia',
+                    titulo: 'Soluções especiais pensadas para a quarentena'
+                },
+                info_cardapios: [
+                    {
+                        id: 3,
+                        img_name: 'Pizza Caseira Basica.png', 
+                        tipo_de_comida: 'Pizza',
+                        avaliacao: '4.5',
+                        titulo: 'Pizza Caseira Básica',
+                        descricao: 'Deliciosa pizza de massa fina e crocante de sabores tradicionais.',
+                        custo_logistico: 0,
+                        valor_total: 900.00,
+                        valor_por_pessoa: 30
+                    },
+                    {
+                        id: 4,
+                        img_name: 'Rodizio Japones.png', 
+                        tipo_de_comida: 'Japonesa',
+                        avaliacao: '4.2',
+                        titulo: 'Rodízio Japonês',
+                        descricao: 'O tradicional rodízio japonês dos restaurantes no seu evento.',
+                        custo_logistico: 100,
+                        valor_total: 2400.00,
+                        valor_por_pessoa: 80
+                    },
+                    {
+                        id: 1,
+                        img_name: 'Crepe Tradicional.png', 
+                        tipo_de_comida: 'Crepe',
+                        avaliacao: '3.9',
+                        titulo: 'Crepe Tradicional',
+                        descricao: 'Variados sabores de crepes doces e salgados para você escolher.',
+                        custo_logistico: 0,
+                        valor_total: 1350.00,
+                        valor_por_pessoa: 100
+                    },
+                    {
+                        id: 2,
+                        img_name: 'Churrasco Premium.png', 
+                        tipo_de_comida: 'Churrasco',
+                        avaliacao: '4.9',
+                        titulo: 'Churrasco Premium',
+                        descricao: 'Cortes especiais como chorizo e tomahawk preparados na brasa.',
+                        custo_logistico: 100,
+                        valor_total: 3100.00,
+                        valor_por_pessoa: 100
+                    },
+                    {
+                        id: 3,
+                        img_name: 'Pizza Caseira Basica.png', 
+                        tipo_de_comida: 'Pizza',
+                        avaliacao: '4.5',
+                        titulo: 'Pizza Caseira Básica',
+                        descricao: 'Deliciosa pizza de massa fina e crocante de sabores tradicionais.',
+                        custo_logistico: 0,
+                        valor_total: 900.00,
+                        valor_por_pessoa: 30
+                    },
+                    {
+                        id: 4,
+                        img_name: 'Rodizio Japones.png', 
+                        tipo_de_comida: 'Japonesa',
+                        avaliacao: '4.2',
+                        titulo: 'Rodízio Japonês',
+                        descricao: 'O tradicional rodízio japonês dos restaurantes no seu evento.',
+                        custo_logistico: 100,
+                        valor_total: 2400.00,
+                        valor_por_pessoa: 80
+                    },
+                    {
+                        id: 1,
+                        img_name: 'Crepe Tradicional.png', 
+                        tipo_de_comida: 'Crepe',
+                        avaliacao: '3.9',
+                        titulo: 'Crepe Tradicional',
+                        descricao: 'Variados sabores de crepes doces e salgados para você escolher.',
+                        custo_logistico: 0,
+                        valor_total: 1350.00,
+                        valor_por_pessoa: 100
+                    },
+                    {
+                        id: 2,
+                        img_name: 'Churrasco Premium.png', 
+                        tipo_de_comida: 'Churrasco',
+                        avaliacao: '4.9',
+                        titulo: 'Churrasco Premium',
+                        descricao: 'Cortes especiais como chorizo e tomahawk preparados na brasa.',
+                        custo_logistico: 100,
+                        valor_total: 3100.00,
+                        valor_por_pessoa: 100
+                    }
+                ]
+            },
+            
         }
         this.handleFunctionCall = this.handleFunctionCall.bind(this);
 
@@ -165,12 +376,12 @@ class CarrosselDeCards extends React.Component {
 
     render () {
         return (
-            <section className = 'carrossel_servico_presencial'>
+            <section className = {'carrossel ' + this.state.servico}>
                 <div className = 'titulo'>
-                    <img src = {require('../../resources/icons/cozinheiro_amarelo.png')} alt = 'cozinheiro'/>
-                    <h2>Cardápios de prestadores que vão até você</h2>
-                </div>             
-                { this.renderCarrossel('servico_presencial') }
+                    <img src = {require('../../resources/icons/' + this.state[this.state.servico].info_titulo.img_name)} alt = {this.state[this.state.servico].info_titulo.img_alt}/>
+                    <h2>{this.state[this.state.servico].info_titulo.titulo}</h2>
+                </div>       
+                { this.renderCarrossel(this.state.servico) }
             </section>
         );
     }

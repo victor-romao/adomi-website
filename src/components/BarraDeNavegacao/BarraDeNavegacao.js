@@ -9,34 +9,7 @@ class BarraDeNavegacao extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            covid: true,
             busca: this.props.busca
-        }
-    }
-
-    render_info_covid(render, exibir_info_covid) {
-        if(!exibir_info_covid) {
-            return;
-        } else {
-            if(render) {
-                return (
-                    
-                    <ReactCSSTransitionGroup 
-                    transitionName = 'animacao_info_covid' 
-                    transitionAppear={true}
-                    transitionAppearTimeout={500}
-                    transitionEnter={true}
-                    transitionEnterTimeout={500}
-                    transitionLeave={true} 
-                    transitionLeaveTimeout={500}>
-                        <div className = 'info_covid'>
-                            <p>Confira nossas políticas em resposta à COVID-19. <a>Saiba mais</a></p>
-                        </div>
-                    </ReactCSSTransitionGroup>
-                    
-
-                );
-            }
         }
     }
 
@@ -46,7 +19,7 @@ class BarraDeNavegacao extends React.Component {
                 <ReactCSSTransitionGroup 
                 transitionName = 'animacao_barra_busca' 
                 transitionAppear = {true} 
-                transitionAppearTimeout={500} 
+                transitionAppearTimeout={1200} 
                 transitionEnter={false} 
                 transitionLeave={true}>
                     <div className = 'barra_de_busca'>
@@ -66,9 +39,9 @@ class BarraDeNavegacao extends React.Component {
         const Observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if(!entry.isIntersecting) {
-                    this.setState({ covid: false, busca: true });
+                    this.setState({ busca: true });
                 } else {
-                    this.setState({ covid: true, busca: false });
+                    this.setState({ busca: false });
                 }
             });
         }, SectionOptions);
@@ -79,7 +52,6 @@ class BarraDeNavegacao extends React.Component {
     render() {
         return (
             <nav>
-                { this.render_info_covid(this.state.covid, this.props.exibir_info_covid) }
                 <div className = 'navbar'>
                     <div className = 'container'>
                         <div className = 'logo'>
@@ -87,14 +59,16 @@ class BarraDeNavegacao extends React.Component {
                         </div>
                         { this.render_barra_de_busca(this.state.busca) }
                         <div className = 'links'>
-                            <a>Anuncie seus Serviços</a>
-                            <a>Ajuda</a>
+                            <Link to = './parceiros'> Anuncie seus Serviços</Link>
+                            <Link to = './ajuda'> Ajuda</Link>
                             <img src = {require('../../resources/icons/salvos.png')} alt = 'itens salvos'/>
                             <img src = {require('../../resources/icons/cesta.png')} alt = 'cesta de compras'/>
-                            <div className = 'login'>
-                                <img src = {require('../../resources/icons/login.png')} alt = 'login'/>
-                                <p>Entrar</p>
-                            </div>
+                            <Link to = './login' >
+                                <div className = 'login'>
+                                    <img src = {require('../../resources/icons/login.png')} alt = 'login'/>
+                                    <p>Entrar</p>
+                                </div>
+                            </Link>
                         </div>
                     </div>
                 </div>

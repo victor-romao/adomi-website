@@ -1,5 +1,7 @@
 import React from 'react';
 import './index.css';
+import '../../reset.css';
+import InfoCovid from '../../components/InfoCovid/InfoCovid';
 import BarraDeNavegacao from '../../components/BarraDeNavegacao/BarraDeNavegacao';
 import ApresentacaoServicos from '../../components/ApresentacaoServicos/ApresentacaoServicos';
 import ComoFunciona from '../../components/ComoFunciona/ComoFunciona';
@@ -16,10 +18,13 @@ class Home extends React.Component {
   render() {
     return (
     <div className="Home">
+      <InfoCovid />
       <BarraDeNavegacao exibir_info_covid = { true } busca = { false } servico = { this.props.servico } />
       <ApresentacaoServicos handleChangeServico = {this.props.handleChangeServico} servico = { this.props.servico } />
       <ComoFunciona />
-      <CarrosselDeCards />
+      <CarrosselDeCards servico = 'servico_presencial' />
+      <CarrosselDeCards servico = 'entrega_no_evento' />
+      <CarrosselDeCards servico = 'solucoes_covid' />
       <AtracaoPrestador />
       <LinksRapidos />
       <Rodape	/>

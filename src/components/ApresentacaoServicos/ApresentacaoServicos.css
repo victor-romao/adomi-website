@@ -33,11 +33,11 @@ h1, h2 {
     color: rgb(124, 124, 124);
 }
 
-.titulo {
+.titulo_e_servicos .titulo {
     margin-top: 45px;
 }
 
-.servicos {
+.titulo_e_servicos .servicos {
     display: flex;
     justify-content: center;
     font-family: 'Open Sans';
@@ -47,7 +47,7 @@ h1, h2 {
     margin-bottom: 15px;
 }
 
-.servicos div {
+.titulo_e_servicos .servicos div {
     display: flex;
     align-items: center;
     margin: 0 30px;
@@ -55,16 +55,16 @@ h1, h2 {
     cursor: pointer;
 }
 
-.servicos div:hover {
+.titulo_e_servicos .servicos div:hover {
     color: rgb(165, 165, 165);
 }
 
-.servicos div img {
+.titulo_e_servicos .servicos div img {
     height: 20px;
     padding-right: 5px;
 }
 
-.servicos div span {
+.titulo_e_servicos .servicos div span {
     margin: 5px;
     padding: 4px;
     font-size: 12px;
@@ -74,11 +74,11 @@ h1, h2 {
     border-radius: 5px;
 }
 
-.servicos .ativo {
+.titulo_e_servicos .servicos .ativo {
     border-bottom: 3px rgb(239, 106, 0) solid;
 }
 
-.servicos .inativo {
+.titulo_e_servicos .servicos .inativo {
     border-bottom: 3px white solid;
 }
 

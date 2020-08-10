@@ -1,5 +1,6 @@
 import React from 'react';
 import './AtracaoPrestador.css';
+import { Link } from 'react-router-dom';
 
 class AtracaoPrestador extends React.Component {
     render () {
@@ -19,7 +20,7 @@ class AtracaoPrestador extends React.Component {
                             <li>Receba contato de clientes e aceite de acordo com sua disponibilidade</li>
                             <li>Garanta o pagamento após a realização do evento</li>
                         </ul>
-                        <button><a>Quero anunciar meus servicos</a></button>
+                        <Link to = '/parceiros' ><button>Quero anunciar meus servicos</button></Link>
                     </div>                     
                 </div>
             </section>

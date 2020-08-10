@@ -1,0 +1,94 @@
+.como_funciona_detalhado {
+    background-color: rgb(239, 51, 64);
+    text-align: center;
+    color: black;
+    font-family: 'Open Sans';
+    padding: 20px 0;
+}
+
+.como_funciona_detalhado .titulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0px;
+}
+
+.como_funciona_detalhado .titulo img {
+    height: 60px;
+    margin-right: 10px;
+}
+
+.como_funciona_detalhado h2 {
+    font-family: 'Baloo Paaji 2';
+    color: white;
+    font-size: 30px;
+    font-weight: normal;
+}
+
+.como_funciona_detalhado h2 span {
+    font-weight: bold;
+}
+.como_funciona_detalhado .passo-a-passo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 86%;
+    padding: 3% 2%;
+    margin: 30px 5%;
+    background-color: white;
+    border-radius: 40px;
+}
+
+.como_funciona_detalhado .passo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    margin: 20px 0;
+}
+
+.como_funciona_detalhado .passo img {
+    height: 70px;
+    margin-bottom: 10px;
+}
+
+.como_funciona_detalhado .passo .container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.como_funciona_detalhado .passo .container .numero {
+    color: rgb(255, 182, 0);
+    font-weight: bold;
+    font-size: 45px;
+    margin: 0px;
+    padding: 0px;
+    padding-right: 15px;
+}
+
+.como_funciona_detalhado .passo .container .informacoes {
+    display: flex;
+    flex-direction: column;
+    width: 270px;
+}
+
+.como_funciona_detalhado .passo .informacoes h6 {
+    padding: 0px;
+    padding-top: 5px;
+    margin: 0px;
+    font-size: 17px;
+    font-weight: bold;
+    width: 270px;
+}
+
+.como_funciona_detalhado .passo .informacoes p {
+    padding: 0px;
+    margin: 0px;
+    margin-top: 5px;
+    font-size: 17px;
+    line-height: 20px;
+}
+

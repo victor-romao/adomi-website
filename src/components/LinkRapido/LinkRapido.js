@@ -1,5 +1,6 @@
 import React from 'react';
 import './LinkRapido.css';
+import { Link } from 'react-router-dom';
 
 class LinkRapido extends React.Component {
     constructor(props) {

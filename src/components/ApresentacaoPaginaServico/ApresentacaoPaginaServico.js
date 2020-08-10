@@ -10,16 +10,19 @@ class ApresentacaoPaginaServico extends React.Component {
             servico: this.props.servico,
             info_servicos: {
                 servico_presencial: {
+                    img_name: 'servico_presencial',
                     titulo: 'Serviço Presencial',
                     descricao: 'Os prestadores vão até o local do evento e preparam tudo na hora, fornecendo uma experiência única e diferenciada para você e seus convidados.',
                     icon_name: 'cozinheiro_amarelo.png'
                 },
                 entrega_no_evento: {
+                    img_name: 'entrega_no_evento',
                     titulo: 'Entrega no Evento',
                     descricao: 'Os prestadores preparam todos os itens para a sua festa, embalam e nós entregamos tudo pronto na hora do seu evento.',
                     icon_name: 'entrega_amarelo.png'
                 },
                 solucoes_covid: {
+                    img_name: 'solucoes_covid',
                     titulo: 'Soluções Especiais Covid',
                     descricao: 'Soluções pensadas especialmente para você poder comemorar com amigos e familiares sem sair de casa. Ache soluções criativas oferecidas pelos nossos prestadores e nós entregamos.',
                     icon_name: 'ideia_amarelo.png'
@@ -30,18 +33,16 @@ class ApresentacaoPaginaServico extends React.Component {
 
     renderServico (servico) {
         return (
-            <div>
-                <div className = 'barra_de_busca' id = 'barra_de_busca_principal'>
-                    <img src = {require('../../resources/imagens/'+this.state.info_servicos[servico].titulo+'.jpg')} alt = {this.state.info_servicos[servico].titulo}/>
-                    <BarraDeBusca formato = 'normal' campos = 'padrao' servico = { this.props.servico } />
-                </div>
+            <div className = 'barra_de_busca' id = 'barra_de_busca_principal'>
+                <img src = {require('../../resources/imagens/'+this.state.info_servicos[servico].img_name +'.jpg')} alt = {this.state.info_servicos[servico].titulo}/>
+                <BarraDeBusca formato = 'normal' campos = 'padrao' servico = { this.props.servico } />
             </div>
         );
     }
 
     render () {
         return (
-            <header>
+            <header className = 'pagina_servicos'>
                 <div className = 'titulo_e_servico'>
                     <img className = 'amarelo sorriso' src = {require('../../resources/logo/sorriso-amarelo-esquerda-apresentacao-servicos.png')} alt = 'sorriso amarelo'/>
                     <div>
@@ -50,7 +51,7 @@ class ApresentacaoPaginaServico extends React.Component {
                         </div>
                         <div className = 'servico'>
                             <img src = {require('../../resources/icons/' + this.state.info_servicos[this.state.servico].icon_name)}/> 
-                            <h2>{this.state.info_servicos[this.state.servico].titulo}</h2>
+                            <h2>{this.state.info_servicos[this.state.servico].titulo.toUpperCase()}</h2>
                         </div>
                     </div>
                     <img className = 'laranja sorriso' src = {require('../../resources/logo/sorriso-laranja-direita-apresentacao-servicos.png')} alt = 'sorriso laranja'/>

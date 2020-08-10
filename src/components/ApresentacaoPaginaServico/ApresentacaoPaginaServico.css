@@ -1,0 +1,73 @@
+
+.pagina_servicos h1, .pagina_servicos h2 {
+    font-family: 'Baloo Paaji 2';
+}
+
+.pagina_servicos .titulo_e_servico div {
+    text-align: center;
+}
+
+.pagina_servicos .sorriso {
+    position: absolute;
+}
+
+.pagina_servicos .sorriso.amarelo {
+    width: 14%;
+    top: 90px;
+}
+
+.pagina_servicos .sorriso.laranja {
+    width: 7%;
+    left: 93%;
+    top: 140px;
+}
+
+.pagina_servicos .titulo_e_servico h1 {
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(239, 106, 0);
+    margin: 0px;
+    margin-bottom: 10px;
+}
+
+.pagina_servicos .titulo_e_servico h2 {
+    font-size: 24px;
+    color: rgb(124, 124, 124);
+    margin: 0px;
+}
+
+.pagina_servicos .titulo {
+    margin-top: 60px;
+    margin-bottom: 0px;
+}
+
+.pagina_servicos .servico {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Open Sans';
+    margin-top: 0px;
+}
+
+.pagina_servicos .servico img {
+    height: 30px;
+    padding-right: 5px;
+}
+
+.pagina_servicos .barra_de_busca {
+    margin: 105px 0;
+    position: relative;
+}
+
+ .barra_de_busca img {
+    margin: 0 8%;
+    width: 84%;
+    z-index: -1;
+}
+
+.pagina_servicos .barra_de_busca form {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    margin-left: -35%;
+}
