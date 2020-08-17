@@ -1,0 +1,58 @@
+.faq_prestador .container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 5% 5%;
+    font-family: 'Open Sans';
+    text-align: left;
+}
+
+.faq_prestador p {
+    font-size: calc(1.5vw);
+    line-height: calc(1.8vw);
+}
+
+.faq_prestador .bold {
+    font-weight: bold;
+}
+
+.faq_prestador .apresentacao_e_contato {
+    width: 30%;
+}
+
+.faq_prestador .apresentacao_e_contato h2, .faq_prestador .apresentacao_e_contato h4 {
+    font-size: calc(2.5vw);
+    font-family: 'Baloo Paaji 2';
+    padding: 10px 0;
+}
+
+.faq_prestador .apresentacao_e_contato h2 {
+    color: rgb(239, 106, 0);
+}
+
+.faq_prestador .apresentacao_e_contato h4 {
+    color: rgb(255, 182, 0);
+}
+
+.faq_prestador .apresentacao_e_contato p {
+    margin-bottom: 20px;
+}
+
+.faq_prestador .apresentacao_e_contato .contato button {
+    width: 100%;
+    background-color: rgb(255, 182, 0);
+    color: white;
+    font-size: calc(2vw);
+    padding: calc(0.5vw) 0;
+    border-radius: calc(0.8vw);
+    border: 2.5px rgb(237, 237, 237) solid;
+    cursor: pointer;
+}
+
+.faq_prestador .perguntas {
+    width: 60%;
+}
+

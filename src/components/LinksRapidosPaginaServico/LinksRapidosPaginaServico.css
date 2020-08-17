@@ -1,0 +1,33 @@
+.links_rapidos_pagina_servico {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px 5%;
+}
+.links_rapidos_pagina_servico .titulo {
+    text-align: center;
+    color: rgb(239, 106, 0);
+    font-size: 30px;
+    font-weight: bold;
+    width: 100%;
+}
+
+.links_rapidos_pagina_servico .links_rapidos {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 0px;
+    padding-left: 5%;
+}
+
+.links_rapidos_pagina_servico .link_rapido {
+    margin: 10px 0;
+    width: 33.3%;
+    box-sizing: border-box;
+}
+

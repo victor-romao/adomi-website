@@ -59,11 +59,11 @@ class BarraDeNavegacao extends React.Component {
                         </div>
                         { this.render_barra_de_busca(this.state.busca) }
                         <div className = 'links'>
-                            <Link to = './parceiros'> Anuncie seus Serviços</Link>
-                            <Link to = './ajuda'> Ajuda</Link>
+                            <Link to = '/parceiros'> Anuncie seus Serviços</Link>
+                            <Link to = '/ajuda'> Ajuda</Link>
                             <img src = {require('../../resources/icons/salvos.png')} alt = 'itens salvos'/>
                             <img src = {require('../../resources/icons/cesta.png')} alt = 'cesta de compras'/>
-                            <Link to = './login' >
+                            <Link to = '/login' >
                                 <div className = 'login'>
                                     <img src = {require('../../resources/icons/login.png')} alt = 'login'/>
                                     <p>Entrar</p>

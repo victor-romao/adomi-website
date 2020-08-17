@@ -6,6 +6,7 @@ import InfoCovid from './pages/InfoCovid';
 import AjudaContratante from './pages/AjudaContratante';
 import AnuncieSeusServicos from './pages/AnuncieSeusServicos';
 import LoginContratante from './pages/LoginContratante';
+import Cardapios from './pages/Cardapios';
 import PaginaCardapio from './pages/PaginaCardapio';
 import SobreAdomi from './pages/SobreAdomi';
 import TemosEPrivacidade from './pages/TermosEPrivacidade';
@@ -25,6 +26,7 @@ class Routes extends React.Component {
                 <Route component = { LoginContratante } path = '/login' />
                 <Route component = { InfoCovid } path = '/info_covid' />
                 <Route component = { Servicos } path = '/servicos/:id' />
+                <Route component = { Cardapios } path = '/cardapios' />
                 <Route component = { PaginaCardapio } path = '/cardapios/:id' />
                 <Route component = { SobreAdomi  } path = '/sobre' />
                 <Route component = { TemosEPrivacidade } path = '/termos_e_privacidade' />

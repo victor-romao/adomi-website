@@ -8,15 +8,92 @@ class LinksRapidos extends React.Component {
         super(props);
         this.state = {
             tipo_de_servico: {
-                servico_presencial: ['Churrasco', 'Crepe', 'Feijoada', 'Finger Food', 'Japonesa', 'Italiana'],
-                entrega_no_evento: ['Salgadinhos', 'Bolos e Doces', 'Lanches', 'Pizza', 'Japonesa', 'Comida de Boteco'],
-                solucoes_covid: ['Salgadinhos', 'Bolos e Doces', 'Comida de Boteco', 'Japonesa', 'Mexicana']
+                servico_presencial: {
+                    info_links: [
+                        {
+                            tipo_de_comida: 'Churrasco',
+                            localizacao: 'São Paulo'
+                        }, 
+                        {
+                            tipo_de_comida: 'Crepe',
+                            localizacao: 'São Paulo'
+                        }, 
+                        {
+                            tipo_de_comida: 'Feijoada',
+                            localizacao: 'São Paulo'
+                        }, 
+                        {
+                            tipo_de_comida: 'Finger Food',
+                            localizacao: 'São Paulo'
+                        }, 
+                        {
+                            tipo_de_comida: 'Japonesa',
+                            localizacao: 'São Paulo'
+                        }, 
+                        {
+                            tipo_de_comida: 'Italiana',
+                            localizacao: 'São Paulo'
+                        }
+                    ]
+                },
+                entrega_no_evento: {
+                    info_links: [
+                        {
+                            tipo_de_comida: 'Salgadinhos',
+                            localizacao: 'São Paulo' 
+                        },
+                        {
+                            tipo_de_comida: 'Bolos e Doces', 
+                            localizacao: 'São Paulo'
+                        },
+                        {
+                            tipo_de_comida: 'Lanches', 
+                            localizacao: 'São Paulo'
+                        },
+                        {
+                            tipo_de_comida: 'Pizza', 
+                            localizacao: 'São Paulo'
+                        },
+                        {
+                            tipo_de_comida: 'Japonesa', 
+                            localizacao: 'São Paulo'
+                        },
+                        {
+                            tipo_de_comida: 'Comida de Boteco',
+                            localizacao: 'São Paulo'
+                        }
+                    ]
+                },
+                solucoes_covid: {
+                    info_links: [
+                        {
+                            tipo_de_comida: 'Salgadinhos', 
+                            localizacao: 'São Paulo'
+                        },
+                        {
+                            tipo_de_comida: 'Bolos e Doces', 
+                            localizacao: 'São Paulo'
+                        },
+                        {
+                            tipo_de_comida: 'Comida de Boteco', 
+                            localizacao: 'São Paulo'
+                        },
+                        {
+                            tipo_de_comida: 'Japonesa', 
+                            localizacao: 'São Paulo'
+                        },
+                        {
+                            tipo_de_comida: 'Mexicana',
+                            localizacao: 'São Paulo'
+                        }
+                    ]
+                }
             }
         };
     }
     links_rapidos_por_tipo_de_servico(servico) {
-        return this.state.tipo_de_servico[servico].map (tipo_de_comida => (
-            <LinkRapido tipo_de_comida = {tipo_de_comida} />
+        return this.state.tipo_de_servico[servico].info_links.map (link => (
+            <LinkRapido servico = {servico} link = {link} />
         ));
     }
 

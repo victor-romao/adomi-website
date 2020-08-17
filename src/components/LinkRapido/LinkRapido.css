@@ -7,4 +7,5 @@ a.link_rapido {
     margin: 10px 0;
     border-bottom: 0.5px rgb(165, 165, 165) solid;
     cursor: pointer;
+    text-decoration: solid;
 }

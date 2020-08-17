@@ -1,0 +1,53 @@
+.barra_navegacao_prestador nav {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+
+
+.barra_navegacao_prestador .navbar {
+    width: 100%;
+    padding: 7px 0;
+    border-bottom: 1px rgb(219, 219, 219) solid;
+    background-color: white;
+}
+
+.barra_navegacao_prestador nav .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 96%;
+    margin: 0 auto;
+}
+
+.barra_navegacao_prestador .logo img {
+    height: 45px;
+    margin: auto 0;
+    cursor: pointer;
+}
+
+.barra_navegacao_prestador .links {
+    display: flex;
+    align-items: center;
+    font-family: 'Open Sans';
+    font-weight: bold;
+    font-size: 18px;
+    color: rgb(82, 82, 82);
+}
+
+.barra_navegacao_prestador .links a {
+    color: rgb(82, 82, 82);
+    text-decoration: solid;
+}
+
+.barra_navegacao_prestador .links  * {
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.barra_navegacao_prestador .links  *:hover {
+    color: rgb(165, 165, 165);
+}

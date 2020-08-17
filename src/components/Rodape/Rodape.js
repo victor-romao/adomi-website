@@ -8,7 +8,7 @@ class Rodape extends React.Component {
             <footer>
                 <div className = 'principal'>
                     <div className = 'adomi container'>
-                        <a><img src={require('../../resources/logo/adomi-o-seu-evento-a-domicilio.png')} alt='Adomi, o seu evento a domicílio'/></a>
+                        <Link to = '/'><img src={require('../../resources/logo/adomi-o-seu-evento-a-domicilio.png')} alt='Adomi, o seu evento a domicílio'/></Link>
                         <p>Usamos tecnologia para unir quem sonha com o evento perfeito e quem o realiza.</p>
                     </div>
                     <div className = 'saiba_mais container'>
