@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './pages/Home';
 import Servicos from './pages/Servicos';
 import InfoCovid from './pages/InfoCovid';
@@ -20,16 +20,83 @@ class Routes extends React.Component {
     render () {
         return (
             <BrowserRouter>
-                <Route render = { props => <Home handleChangeServico = {this.props.handleChangeServico} servico = { this.props.servico } />} path = '/' exact />
-                <Route component = { AjudaContratante } path = '/ajuda' />
-                <Route component = { AnuncieSeusServicos } path = '/parceiros' />
-                <Route component = { LoginContratante } path = '/login' />
-                <Route component = { InfoCovid } path = '/info_covid' />
-                <Route component = { Servicos } path = '/servicos/:id' />
-                <Route component = { Cardapios } path = '/cardapios' />
-                <Route component = { PaginaCardapio } path = '/cardapios/:id' />
-                <Route component = { SobreAdomi  } path = '/sobre' />
-                <Route component = { TemosEPrivacidade } path = '/termos_e_privacidade' />
+                <Switch>
+                    <Route render = { props => 
+                        <Home 
+                            handleSearchInputChange = {this.props.handleSearchInputChange}   
+                            info_busca = { this.props.info_busca }
+                            {...props}
+                        />} 
+                        path = '/' exact 
+                    />
+                    <Route render = { props => 
+                        <AjudaContratante 
+                            handleSearchInputChange = {this.props.handleSearchInputChange}  
+                            info_busca = { this.props.info_busca }
+                            {...props}
+                        />} 
+                        path = '/ajuda' exact
+                    />
+                    <Route 
+                        component = { AnuncieSeusServicos } 
+                        path = '/parceiros' exact
+                    />
+                    <Route 
+                        component = { LoginContratante } 
+                        path = '/login' exact
+                    />
+                    <Route render = { props => 
+                        <InfoCovid 
+                            handleSearchInputChange = {this.props.handleSearchInputChange}  
+                            info_busca = { this.props.info_busca }
+                            {...props}
+                        />} 
+                        path = '/info_covid' exact
+                    />
+                    <Route render = { props => 
+                        <Servicos 
+                            handleSearchInputChange = {this.props.handleSearchInputChange}  
+                            info_busca = { this.props.info_busca }
+                            {...props}
+                        />} 
+                        path = '/servicos/:id'
+                    />
+                    <Route render = { props => 
+                        <Cardapios 
+                            handleSearchInputChange = {this.props.handleSearchInputChange}  
+                            info_busca = { this.props.info_busca }
+                            {...props} 
+                        />} 
+                        path = '/cardapios' exact
+                    />
+                    <Route render = { props => 
+                        <PaginaCardapio 
+                            handleSearchInputChange = {this.props.handleSearchInputChange}   
+                            info_busca = { this.props.info_busca }
+                            {...props}
+                        />} 
+                        path = '/cardapios/:id' 
+                    />
+                    <Route render = { props => 
+                        <SobreAdomi  
+                            handleSearchInputChange = {this.props.handleSearchInputChange}  
+                            info_busca = { this.props.info_busca } 
+                            {...props}
+                        />} 
+                        path = '/sobre' exact
+                    />
+                    <Route 
+                        component = { TemosEPrivacidade } 
+                        path = '/termos_e_privacidade' exact
+                    />
+                    <Route render = { props => 
+                        <Erro 
+                            handleSearchInputChange = {this.props.handleSearchInputChange}  
+                            info_busca = { this.props.info_busca }
+                            {...props} 
+                        />} 
+                    />
+                </Switch>                
             </BrowserRouter>
         );
     }

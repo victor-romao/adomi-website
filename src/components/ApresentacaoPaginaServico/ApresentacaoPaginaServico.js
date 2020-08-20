@@ -7,7 +7,7 @@ class ApresentacaoPaginaServico extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            servico: this.props.servico,
+            servico: this.props.info_busca.servico,
             info_servicos: {
                 servico_presencial: {
                     img_name: 'servico_presencial',
@@ -35,7 +35,13 @@ class ApresentacaoPaginaServico extends React.Component {
         return (
             <div className = 'barra_de_busca' id = 'barra_de_busca_principal'>
                 <img src = {require('../../resources/imagens/'+this.state.info_servicos[servico].img_name +'.jpg')} alt = {this.state.info_servicos[servico].titulo}/>
-                <BarraDeBusca formato = 'normal' campos = 'padrao' servico = { this.props.servico } />
+                <BarraDeBusca 
+                    formato = 'normal' 
+                    campos = 'padrao'  
+                    handleSearchInputChange = { this.props.handleSearchInputChange } 
+                    info_busca = { this.props.info_busca }
+                    {...this.props}
+                />
             </div>
         );
     }

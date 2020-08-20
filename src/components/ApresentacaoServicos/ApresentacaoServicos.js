@@ -2,12 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './ApresentacaoServicos.css';
 import BarraDeBusca from '../BarraDeBusca/BarraDeBusca';
+import SelecaoServico from '../SelecaoServico/SelecaoServico';
 
 class ApresentacaoServicos extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            servico: 'servico_presencial',
+            servico: this.props.info_busca.servico,
             info_servicos: {
                 servico_presencial: {
                     titulo: 'Serviço Presencial',
@@ -29,21 +30,15 @@ class ApresentacaoServicos extends React.Component {
                 }
             }
         }
+        this.handleServicoChange = this.handleServicoChange.bind(this);
     }
 
-    handleServiceChange (servico) {
-        this.props.handleChangeServico(servico);
-        this.setState (
-            { servico: servico }
-        );
-    }
-
-    servicoAtivo (servico) {
-        if(servico === this.state.servico) {
-            return 'ativo';
-        } else {
-            return 'inativo';
-        }
+    async handleServicoChange (servico) {
+        await this.props.handleSearchInputChange('servico', servico);
+        this.setState({
+            servico: this.props.info_busca.servico
+        })
+        console.log(this.props.info_busca);
     }
 
     renderServico (servico) {
@@ -51,7 +46,13 @@ class ApresentacaoServicos extends React.Component {
             <div>
                 <div className = 'barra_de_busca' id = 'barra_de_busca_principal'>
                     <img src = {require('../../resources/imagens/'+this.state.info_servicos[servico].img_name+'.jpg')} alt = {this.state.info_servicos[servico].titulo}/>
-                    <BarraDeBusca formato = 'normal' campos = 'padrao' servico = { this.props.servico } />
+                    <BarraDeBusca 
+                        formato = 'normal' 
+                        campos = 'padrao' 
+                        handleSearchInputChange = {this.props.handleSearchInputChange} 
+                        info_busca = { this.props.info_busca }
+                        {...this.props}
+                    />
                 </div>
                 <div className = 'descricao'>
                     <p>
@@ -73,21 +74,7 @@ class ApresentacaoServicos extends React.Component {
                             <h1>O seu evento a domicílio</h1>
                             <h2>Encontre e contrate sem complicações</h2>
                         </div>
-                        <div className = 'servicos'>
-                            <div className = { this.servicoAtivo('servico_presencial') } id = 'servico_presencial' onClick = { this.handleServiceChange.bind(this, 'servico_presencial') }>
-                                <img src = {require('../../resources/icons/cozinheiro.png')} alt = 'cozinheiro'/>
-                                <h3>Serviço Presencial</h3>
-                            </div>
-                            <div className = { this.servicoAtivo('entrega_no_evento') } id = 'entrega_no_evento' onClick = { this.handleServiceChange.bind(this, 'entrega_no_evento') }>
-                                <img src = {require('../../resources/icons/entrega.png')} alt = 'entrega'/>
-                                <h3>Entrega no Evento</h3>
-                            </div>
-                            <div className = { this.servicoAtivo('solucoes_covid') } id = 'solucoes_covid' onClick = { this.handleServiceChange.bind(this, 'solucoes_covid') }>
-                                <img src = {require('../../resources/icons/ideia.png')} alt = 'ideia'/>
-                                <h3>Soluções Especiais Covid</h3>
-                                <span>NOVO</span>
-                            </div>
-                        </div>
+                        <SelecaoServico handleServicoChange = { this.handleServicoChange } info_busca = { this.props.info_busca }/>
                     </div>
                     <img className = 'laranja sorriso' src = {require('../../resources/logo/sorriso-laranja-direita-apresentacao-servicos.png')} alt = 'sorriso laranja'/>
                 </div>

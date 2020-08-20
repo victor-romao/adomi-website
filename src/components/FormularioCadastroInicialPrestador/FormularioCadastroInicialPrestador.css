@@ -91,6 +91,8 @@
     border: 2.5px rgb(237, 237, 237) solid;
     border-radius: 15px;
     width: 100%;
+    outline: none;
+    cursor: pointer;
 }
 
 .formulario_inicial_prestador button:hover {

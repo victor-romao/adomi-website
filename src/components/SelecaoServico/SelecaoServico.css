@@ -1,0 +1,45 @@
+.selecao_servico {
+    display: flex;
+    justify-content: center;
+    font-family: 'Open Sans';
+    color: black;
+    font-size: 18px;
+    margin-top: 45px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.selecao_servico div {
+    display: flex;
+    align-items: center;
+    margin: 0 30px;
+    padding-bottom: 3px;
+    cursor: pointer;
+}
+
+.selecao_servico div:hover {
+    color: rgb(165, 165, 165);
+}
+
+.selecao_servico div img {
+    height: 20px;
+    padding-right: 5px;
+}
+
+.selecao_servico div span {
+    margin: 5px;
+    padding: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: rgb(255, 182, 0);
+    color: white;
+    border-radius: 5px;
+}
+
+.selecao_servico .ativo {
+    border-bottom: 3px rgb(239, 106, 0) solid;
+}
+
+.selecao_servico .inativo {
+    border-bottom: 3px white solid;
+}

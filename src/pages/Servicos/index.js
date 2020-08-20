@@ -12,31 +12,32 @@ import Rodape from '../../components/Rodape/Rodape';
 class Servicos extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            servico: this.props.match.params.id,
-            info_servicos: {
-                servico_presencial: {
+    }
 
-                },
-                entrega_no_evento: {
-
-                },
-                solucoes_covid: {
-
-                }
-            }
-        }
+    componentWillMount() {
+        this.props.handleSearchInputChange('servico', this.props.match.params.id);
     }
 
     render () {
         return (
             <div className = 'Servicos'>
-                <BarraDeNavegacao busca = { false } servico = { this.state.servico }/>
-                <ApresentacaoPaginaServico servico = { this.state.servico } />
-                <ComoFuncionaDetalhado servico = { this.state.servico } />
-                <CarrosselDeCards servico = { this.state.servico } />
+                <BarraDeNavegacao 
+                    busca = { false } 
+                    campos = 'padrao' 
+                    animacao_busca = { true }  
+                    handleSearchInputChange = { this.props.handleSearchInputChange } 
+                    info_busca = { this.props.info_busca }
+                    {...this.props}
+                />
+                <ApresentacaoPaginaServico  
+                    handleSearchInputChange = { this.props.handleSearchInputChange } 
+                    info_busca = { this.props.info_busca } 
+                    {...this.props}
+                />
+                <ComoFuncionaDetalhado servico = { this.props.match.params.id } />
+                <CarrosselDeCards servico = { this.props.match.params.id } />
                 <InformacoesAdicionaisPaginaServico />
-                <LinksRapidosPaginaServico servico = { this.state.servico } />
+                <LinksRapidosPaginaServico servico = { this.props.match.params.id } />
                 <Rodape />
             </div>
         );

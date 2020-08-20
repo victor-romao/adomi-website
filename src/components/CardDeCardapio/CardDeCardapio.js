@@ -20,7 +20,7 @@ class CardDeCardapio extends React.Component {
             
             <div className = 'cardapio'>
                 <Link to = {'/cardapios/' + this.props.cardapio.id } >    
-                    <img src = {require('../../resources/imagens/cardapios/' + this.props.cardapio.img_name )} alt = { this.props.cardapio.tipo_de_comida }/>
+                    <img src = {require('../../resources/imagens/cardapios/cardapio_' + this.props.cardapio.id + '/img_1.png' )} alt = { this.props.cardapio.tipo_de_comida }/>
                     <div className = 'informacoes'>
                         <div className = 'tipo_de_comida_e_avaliacao'>
                             <h3 className = 'tipo_de_comida'>{ this.props.cardapio.tipo_de_comida }</h3>
@@ -30,7 +30,7 @@ class CardDeCardapio extends React.Component {
                             </div>
                         </div>
                         <h4>{ this.props.cardapio.titulo }</h4>
-                        <p className = 'descricao'>{ this.props.cardapio.descricao }</p>
+                        <p className = 'subtitulo'>{ this.props.cardapio.subtitulo }</p>
                         <div className = 'custos'>
                             <div>
                                 { this.renderLogística(this.props.cardapio.custo_logistico) }

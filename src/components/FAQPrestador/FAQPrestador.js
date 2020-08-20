@@ -72,7 +72,7 @@ class FAQPrestador extends React.Component {
     
     render() {
         return (
-            <div className = 'faq_prestador'>
+            <div id = 'faq_prestador' className = 'faq_prestador'>
                 <div className = 'container'>
                     <div className = 'apresentacao_e_contato'>
                         <div className = 'apresentacao'>

@@ -37,51 +37,6 @@ h1, h2 {
     margin-top: 45px;
 }
 
-.titulo_e_servicos .servicos {
-    display: flex;
-    justify-content: center;
-    font-family: 'Open Sans';
-    color: black;
-    font-size: 18px;
-    margin-top: 45px;
-    margin-bottom: 15px;
-}
-
-.titulo_e_servicos .servicos div {
-    display: flex;
-    align-items: center;
-    margin: 0 30px;
-    padding-bottom: 3px;
-    cursor: pointer;
-}
-
-.titulo_e_servicos .servicos div:hover {
-    color: rgb(165, 165, 165);
-}
-
-.titulo_e_servicos .servicos div img {
-    height: 20px;
-    padding-right: 5px;
-}
-
-.titulo_e_servicos .servicos div span {
-    margin: 5px;
-    padding: 4px;
-    font-size: 12px;
-    font-weight: bold;
-    background-color: rgb(255, 182, 0);
-    color: white;
-    border-radius: 5px;
-}
-
-.titulo_e_servicos .servicos .ativo {
-    border-bottom: 3px rgb(239, 106, 0) solid;
-}
-
-.titulo_e_servicos .servicos .inativo {
-    border-bottom: 3px white solid;
-}
-
 .barra_de_busca {
     margin: 20px 0 5px 0;
     position: relative;

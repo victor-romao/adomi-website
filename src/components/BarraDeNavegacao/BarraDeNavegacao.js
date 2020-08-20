@@ -9,6 +9,7 @@ class BarraDeNavegacao extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            animacao_busca: this.props.animacao_busca,
             busca: this.props.busca
         }
     }
@@ -21,32 +22,46 @@ class BarraDeNavegacao extends React.Component {
                 transitionAppear = {true} 
                 transitionAppearTimeout={1200} 
                 transitionEnter={false} 
-                transitionLeave={true}>
+                transitionLeave={true}
+                transitionLeaveTimeout={1200}>
                     <div className = 'barra_de_busca'>
-                        <BarraDeBusca formato = 'reduzido' campos = 'padrao' servico = { this.props.servico } />
+                        <BarraDeBusca 
+                            formato = 'reduzido' 
+                            campos = { this.props.campos }  
+                            handleSearchInputChange = { this.props.handleSearchInputChange } 
+                            info_busca = { this.props.info_busca }
+                            {...this.props} 
+                        />
                     </div>
                 </ReactCSSTransitionGroup>
             );
         }
     }
-
+    
+    render_anuncie_seus_servicos(campos) {
+        if(campos === 'padrao') {
+            return <Link to = '/parceiros'> Anuncie seus Serviços</Link>;
+        }
+    }
     componentDidMount() {
-        const Section = document.getElementById('barra_de_busca_principal');
-        const SectionOptions = {
-            rootMargin: '-110px 0px 0px 0px'
-        };
+        if(this.state.animacao_busca) {
+            const Section = document.getElementById('barra_de_busca_principal');
+            const SectionOptions = {
+                rootMargin: '-110px 0px 0px 0px'
+            };
 
-        const Observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if(!entry.isIntersecting) {
-                    this.setState({ busca: true });
-                } else {
-                    this.setState({ busca: false });
-                }
-            });
-        }, SectionOptions);
+            const Observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if(!entry.isIntersecting) {
+                        this.setState({ busca: true });
+                    } else {
+                        this.setState({ busca: false });
+                    }
+                });
+            }, SectionOptions);
 
-        Observer.observe(Section);
+            Observer.observe(Section);
+        }
     }
     
     render() {
@@ -59,7 +74,7 @@ class BarraDeNavegacao extends React.Component {
                         </div>
                         { this.render_barra_de_busca(this.state.busca) }
                         <div className = 'links'>
-                            <Link to = '/parceiros'> Anuncie seus Serviços</Link>
+                            { this.render_anuncie_seus_servicos(this.props.campos) }
                             <Link to = '/ajuda'> Ajuda</Link>
                             <img src = {require('../../resources/icons/salvos.png')} alt = 'itens salvos'/>
                             <img src = {require('../../resources/icons/cesta.png')} alt = 'cesta de compras'/>

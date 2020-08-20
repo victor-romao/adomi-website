@@ -19,8 +19,19 @@ class Home extends React.Component {
     return (
     <div className="Home">
       <InfoCovid />
-      <BarraDeNavegacao exibir_info_covid = { true } busca = { false } servico = { this.props.servico } />
-      <ApresentacaoServicos handleChangeServico = {this.props.handleChangeServico} servico = { this.props.servico } />
+      <BarraDeNavegacao 
+        busca = { false } 
+        campos = 'padrao' 
+        animacao_busca = { true }  
+        handleSearchInputChange = {this.props.handleSearchInputChange}
+        info_busca = { this.props.info_busca }
+        {...this.props}
+      />
+      <ApresentacaoServicos 
+        handleSearchInputChange = {this.props.handleSearchInputChange}  
+        info_busca = { this.props.info_busca }
+        {...this.props}
+      />
       <ComoFunciona />
       <CarrosselDeCards servico = 'servico_presencial' />
       <CarrosselDeCards servico = 'entrega_no_evento' />

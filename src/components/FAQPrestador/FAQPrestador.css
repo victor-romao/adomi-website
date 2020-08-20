@@ -50,6 +50,7 @@
     border-radius: calc(0.8vw);
     border: 2.5px rgb(237, 237, 237) solid;
     cursor: pointer;
+    outline: none;
 }
 
 .faq_prestador .perguntas {

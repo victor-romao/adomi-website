@@ -5,21 +5,29 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      servico: 'servico_presencial'
+      info_busca: {
+        servico: 'servico_presencial',
+        localizacao: '',
+        data_e_hora: '',
+        numero_convidados: '',
+      }
     }
-    this.handleChangeServico = this.handleChangeServico.bind(this);
+    this.handleSearchInputChange = this.handleSearchInputChange.bind(this);
   }
 
-  handleChangeServico (servico) {
-    this.setState({
-      servico: servico
-    });
+  handleSearchInputChange(param, paramValue) {
+    this.setState(prevState => ({
+      info_busca: {
+          ...prevState.info_busca,
+          [param]: paramValue
+      }
+    }));
   }
 
   render() {
     return (
     <div className="App">
-      <Routes	handleChangeServico = { this.handleChangeServico } servico = { this.state.servico }/>
+      <Routes handleSearchInputChange = { this.handleSearchInputChange } info_busca = { this.state.info_busca }/>
     </div>
     );
   }

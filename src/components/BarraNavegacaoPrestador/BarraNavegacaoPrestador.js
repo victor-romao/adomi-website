@@ -8,7 +8,19 @@ class BarraDeNavegacaoPrestador extends React.Component {
     constructor(props) {
         super(props);
     }
-    
+
+    handleScrollCall(hash) {
+        function handleScrollTo() {
+            const element = document.getElementById(hash)
+            const yPosition = element.getBoundingClientRect().top + window.pageYOffset - 60;
+            window.scrollTo({
+                behavior: "smooth",
+                top: yPosition,
+            });
+        }
+        return handleScrollTo;
+    }
+
     render() {
         return (
             <nav className = 'barra_navegacao_prestador'>
@@ -18,7 +30,7 @@ class BarraDeNavegacaoPrestador extends React.Component {
                             <Link to = '/'><img src={require('../../resources/logo/adomi-o-seu-evento-a-domicilio.png')} alt='Adomi, o seu evento a domicílio'/></Link>
                         </div>
                         <div className = 'links'>
-                            <Link to = 'parceiros/ajuda'>Ajuda</Link>
+                            <a onClick = { this.handleScrollCall('faq_prestador') }>Ajuda</a>
                             <Link to = 'parceiros/login'>Já sou Parceiro</Link>
                         </div>
                     </div>
