@@ -9,7 +9,7 @@ class CardDeCardapio extends React.Component {
     
     renderLogística (custo_logistico) {
         if(custo_logistico === 0) {
-            return <p className = 'custo_logistico grátis'>Deslocamento Grátis</p>
+            return <p className = 'custo_logistico gratis'>Deslocamento Grátis</p>
         } else {
             return <p className = 'custo_logistico'>Deslocamento R$ { custo_logistico }</p>
         }

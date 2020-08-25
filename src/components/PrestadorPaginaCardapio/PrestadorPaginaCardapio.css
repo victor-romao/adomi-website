@@ -1,0 +1,105 @@
+.info_prestador {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    color: black;
+    font-size: 16px;
+    margin: 30px 0px 50px 0px;
+    width: 100%;
+}
+
+.info_prestador .infos_principal {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 15px;
+    height: auto;
+}
+
+.info_prestador .infos_principal h4 {
+    font-size: calc(2vw);
+    margin-bottom: 10px;
+}
+
+.info_prestador .infos_principal .profile {
+    height: 100px;
+    margin-right: 10px;
+}
+.info_prestador .infos_principal .container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.info_prestador .infos_principal .lista_infos {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 20px;
+}
+
+.info_prestador .avaliacao .nota {
+    margin: 0 5px;
+    color: rgb(252, 209, 22);
+}
+
+.info_prestador .avaliacao .quantidade_avaliacao {
+    color: rgb(151, 153, 155)
+}
+
+.info_prestador .avaliacao img {
+    width: 15px;
+    border-radius: 0;
+}
+
+.info_prestador .container span {
+    width: 4px;
+    height: 4px;
+    margin: 0px calc(1.5vw);
+    background-color: rgb(151, 153, 155);
+    border-radius: 2px;
+}
+
+.info_prestador .infos_principal .lista_infos .identidade {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: rgb(151, 153, 155);
+}
+
+.info_prestador .infos_principal .lista_infos .identidade img {
+    height: 25px;
+}
+
+.info_prestador .infos_auxiliares {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.info_prestador .infos_auxiliares .sobre {
+   width: calc(47vw);
+}
+
+.info_prestador .infos_auxiliares .especialidades {
+    
+}
+
+.info_prestador .infos_auxiliares .especialidades li {
+    padding: 2.5px 0;
+}
+
+.info_prestador .infos_auxiliares .especialidades li:before{
+    display: inline-block;
+    content: '';
+    width: 18px;
+    height: 10px;
+    background-size: 18px;
+    background-image:  url(../../resources/logo/sorriso-amarelo.png);
+    background-repeat: no-repeat;
+    margin-right: 5px;
+}
+

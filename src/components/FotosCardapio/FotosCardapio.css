@@ -1,0 +1,58 @@
+.fotos_cardapio {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: calc(1vw) 0;
+}
+
+.fotos_cardapio img {
+    width: 66.6%;
+    margin-right: calc(0.5vw);
+    padding: 0px;
+    border-bottom-left-radius: calc(2vw);
+    border-top-left-radius: calc(2vw);
+}
+
+.fotos_cardapio .secundarias {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    width: 100%;
+}
+
+.fotos_cardapio .secundarias img {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: calc(0.5vw);
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: calc(2vw);
+}
+
+.fotos_cardapio .secundarias img.bottom {
+    margin-bottom: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: calc(2vw);
+}
+
+.fotos_cardapio button {
+    position: absolute;
+    bottom: calc(1.4vw);
+    right: calc(1.7vw);
+    border-radius: 10px;
+    padding: 8px 16px;
+    font-weight: bold;
+    font-size: calc(1.2vw);
+    border: 2px solid rgb(82, 82, 82);
+    outline: none;
+    color: rgb(82, 82, 82);
+    cursor: pointer;
+}
+
+.fotos_cardapio button:hover {
+    color: black;
+    background-color: rgb(220, 220, 220);
+}

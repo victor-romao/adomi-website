@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import './Carrinho.css';
+import './VisualizadorDeImagens.css';
 
-class Carrinho extends React.Component {
+class VisualizadorDeImagens extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -10,10 +9,10 @@ class Carrinho extends React.Component {
     render() {
         return (
             <div>
-                Carrinho
+                VisualizadorDeImagens
             </div>
         );
     }
 }
 
-export default Carrinho;
+export default VisualizadorDeImagens;

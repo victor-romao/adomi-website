@@ -1,0 +1,30 @@
+.informacoes_adicionais_cardapio {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.informacoes_adicionais_cardapio .container {
+    margin-bottom: 30px;
+}
+
+.informacoes_adicionais_cardapio .container h6 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    padding: 0px;
+}
+
+.informacoes_adicionais_cardapio .container li {
+    padding: 5px 0;
+}
+
+.informacoes_adicionais_cardapio .container li:before { 
+    display: inline-block;
+    content: '';
+    width: 18px;
+    height: 10px;
+    background-size: 18px;
+    background-image:  url(../../resources/logo/sorriso-amarelo.png);
+    background-repeat: no-repeat;
+    margin-right: 5px;
+}

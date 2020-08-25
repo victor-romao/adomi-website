@@ -1,0 +1,81 @@
+.informacoes_cardapio {
+    width: 100%;
+    font-family: 'Open Sans';
+    font-size: 16px;
+    color: black;
+}
+
+.informacoes_cardapio .bold {
+    font-weight: bold;
+}
+
+.informacoes_cardapio h1 {
+    color: black;
+    font-size: 35px;
+    margin-bottom: calc(0.4vw);
+}
+
+.informacoes_cardapio h2 {
+    font-family: 'Open Sans';
+    font-size: 24px;
+    margin-bottom: calc(2vw);
+    color: rgb(151, 153, 155);
+}
+
+.informacoes_cardapio h4 {
+    color: rgb(89, 89, 89);
+    font-size: 20px;
+}
+
+.informacoes_cardapio .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    color: rgb(151, 153, 155);
+}
+
+.informacoes_cardapio .container .esquerda {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.informacoes_cardapio .container .gratis {
+    color: rgb(146, 208, 80)
+}
+
+.informacoes_cardapio .container span {
+    width: 4px;
+    height: 4px;
+    margin: 0px calc(1.5vw);
+    background-color: rgb(151, 153, 155);
+    border-radius: 2px;
+}
+
+.informacoes_cardapio .avaliacao .nota {
+    margin: 0 5px;
+    color: rgb(252, 209, 22);
+}
+
+.informacoes_cardapio .avaliacao img {
+    width: 15px;
+    border-radius: 0;
+}
+
+.informacoes_cardapio .divisao_colunas {
+    margin: calc(3vw) 0;
+    align-items: flex-start;
+}
+
+.informacoes_cardapio .descricao_cardapio {
+    padding-right: 20px;
+}
+
+.informacoes_cardapio .descricao_cardapio p {
+    margin: 10px 0;
+    width: auto;
+    color: black;
+}
+

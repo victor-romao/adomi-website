@@ -1,0 +1,115 @@
+.avaliacoes_prestador {
+    margin: 20px 0 50px 0;
+}
+
+.avaliacao_geral { 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.avaliacoes_prestador .avaliacao_geral .nota_amarela {
+    margin: 0 5px;
+    color: rgb(252, 209, 22);
+}
+
+.avaliacoes_prestador .avaliacao_geral .quantidade_avaliacao {
+    color: rgb(151, 153, 155)
+}
+
+.avaliacoes_prestador .avaliacao_geral img {
+    width: 15px;
+    border-radius: 0;
+}
+
+.avaliacoes_prestador .notas_por_atributo {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.avaliacoes_prestador .colunas {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.avaliacoes_prestador .colunas .nota_por_atributo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.avaliacoes_prestador .colunas .nota_por_atributo .titulo_atributo {
+    width: 170px;
+}
+
+.avaliacoes_prestador .colunas .nota_por_atributo img {
+    height: 12px;
+    padding-left: 5px
+}
+
+.avaliacoes_prestador .gap {
+    width: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 0px 5px;
+}
+
+.avaliacoes_prestador #barra_nota_atributo {
+    background-color: black;
+    height: 6px;
+    border-radius: 3px;
+}
+
+.avaliacoes_prestador .comentario {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 30px 0;
+}
+
+.avaliacoes_prestador .comentario .linha {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: bold;
+    color: rgb(151, 153, 155);
+    margin-bottom: 10px;
+}
+
+.avaliacoes_prestador .linha .divisoria {
+    width: 4px;
+    height: 4px;
+    margin: 0px calc(1.5vw);
+    background-color: rgb(151, 153, 155);
+    border-radius: 2px;
+}
+
+.avaliacoes_prestador .comentarios .mais_comentarios {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: rgb(255, 182, 0);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.avaliacoes_prestador .comentarios .mais_comentarios:hover {
+    text-decoration: rgb(255, 182, 0) underline;
+}
+
+.avaliacoes_prestador .comentarios .mais_comentarios img {
+    height: 20px;
+    padding-left: 5px;
+    padding-top: 3px;
+}

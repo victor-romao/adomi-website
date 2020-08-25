@@ -1,0 +1,99 @@
+.adicionar_cardapio_cesta {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding: 20px;
+    background-color: white;
+    border: 2px rgb(237, 237, 237) solid;
+    border-radius: calc(2vw);
+}
+
+.adicionar_cardapio_cesta .container {
+    width: 220px;
+}
+
+.adicionar_cardapio_cesta p {
+    color: black;
+    font-size: 14px;
+    padding: 3px 0;
+}
+
+.adicionar_cardapio_cesta .valor_por_pessoa {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.adicionar_cardapio_cesta .valor_por_pessoa p {
+    font-size: 22px;
+    color: rgb(151, 153, 155);
+}
+
+.adicionar_cardapio_cesta .valor_por_pessoa span, .adicionar_cardapio_cesta .valor_por_pessoa .por_pessoa {
+    font-size: 13px;
+    color: rgb(151, 153, 155)
+}
+
+.adicionar_cardapio_cesta .valor_por_pessoa .span_adicionar {
+    padding: 3px 5px 3px 0;
+    margin: 0;
+    background-color: white;
+    border-radius: 0;
+    height: auto;
+    width: auto;
+}
+
+.adicionar_cardapio_cesta .space {
+    margin-top: 20px;
+}
+
+.adicionar_cardapio_cesta .total {
+    border-top: 2px rgb(237, 237, 237) solid;
+    padding-top: 6px;
+}
+
+.adicionar_cardapio_cesta .adicionar {
+    padding: 5px 10px;
+    background-color: rgb(239, 106, 0);
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+    border: 2px rgb(237, 237, 237) solid;
+    outline: none;
+}
+
+.adicionar_cardapio_cesta .adicionar:hover {
+    background-color: rgb(255, 106, 0);
+}
+
+.adicionar_cardapio_cesta_reduzido .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 330px;
+    padding: 10px 25px;
+    box-sizing: border-box;
+}
+
+.adicionar_cardapio_cesta_reduzido .total {
+    color: rgb(151, 153, 155);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.adicionar_cardapio_cesta_reduzido .adicionar {
+    padding: 5px 10px;
+    background-color: rgb(239, 106, 0);
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+    border: 2px rgb(237, 237, 237) solid;
+    outline: none;
+}
+
+.adicionar_cardapio_cesta_reduzido .adicionar:hover {
+    background-color: rgb(255, 106, 0);
+}

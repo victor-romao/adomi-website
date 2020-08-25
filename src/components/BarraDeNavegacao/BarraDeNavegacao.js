@@ -43,6 +43,7 @@ class BarraDeNavegacao extends React.Component {
             return <Link to = '/parceiros'> Anuncie seus Serviços</Link>;
         }
     }
+    
     componentDidMount() {
         if(this.state.animacao_busca) {
             const Section = document.getElementById('barra_de_busca_principal');

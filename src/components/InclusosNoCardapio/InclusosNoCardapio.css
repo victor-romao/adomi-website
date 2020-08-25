@@ -1,0 +1,32 @@
+.inclusos_no_cardapio {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: calc(3vw) 0;
+}
+
+.inclusos_no_cardapio .container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.inclusos_no_cardapio .container .item_incluso {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 265px;
+    padding: 5px 0;
+}
+
+.inclusos_no_cardapio .container .item_incluso img{
+    height: 20px;
+    padding-right: 5px;
+}
+
+.inclusos_no_cardapio .container .item_incluso p {
+    font-size: 16px;
+}

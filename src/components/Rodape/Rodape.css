@@ -4,26 +4,30 @@ footer {
     font-size: 20px;
     border-top: 1px rgb(219, 219, 219) solid;
     font-family: 'Open Sans';
+    width: 100%;
 }
 
 footer .principal, footer .secundario {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
     width: 84%;
-    margin: 0 auto;
+    margin: 0 8%;
 }
-
 
 footer .principal {
     padding: 50px 0;
     border-bottom: 1px rgb(219, 219, 219) solid;
 }
 
-.principal .container {
+.principal .adomi {
     display: flex;
-    flex-direction: column;
-    align-items: baseline;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-right: 1%;
+    margin-bottom: 50px;
 }
 
 .principal .adomi p {
@@ -32,8 +36,23 @@ footer .principal {
 
 .principal .adomi img {
     height: 50px;
+    margin-right: 20px;
     margin-bottom: 2px;
     cursor: pointer;
+}
+
+footer .principal .containers {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 68%;
+    min-width: 650px;
+}
+
+.principal .container {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
 }
 
 .principal .container h6 {
@@ -76,4 +95,70 @@ footer .secundario img {
 .redes_sociais a {
     color: rgb(151, 153, 155);
     text-decoration: solid;
+}
+
+@media only screen and (min-width: 770px) and (max-width: 1130px) {
+    footer .principal {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    footer .principal .adomi {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+    
+    footer .principal .adomi p {
+        width: 400px;
+    }
+    
+    footer .principal .containers {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 770px) {
+    footer .principal {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 84%;
+    }
+    
+    footer .principal .adomi {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 10px 0;
+        width: 84%;
+    }
+
+    footer .principal .adomi p {
+        width: 400px;
+    }
+    
+    footer .principal .containers {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: auto;
+        width: 100%;
+    }
+
+    footer .principal .containers .container {
+        margin: 15px 0;
+        width: 250px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer .principal .containers .container ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
