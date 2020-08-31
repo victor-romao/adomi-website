@@ -26,7 +26,6 @@ class ContatoPrestador extends React.Component {
                 [param]: paramValue
             }
         }));
-        console.log(this.state.informacoes_prestador);
     }
     
     render() {

@@ -68,10 +68,6 @@ class Itens extends React.Component {
     }
 
     render() {
-
-    }
-
-    render() {
         return (
             <section className = 'itens_oferecidos'>
                 {this.renderSectionItens('entradas')}

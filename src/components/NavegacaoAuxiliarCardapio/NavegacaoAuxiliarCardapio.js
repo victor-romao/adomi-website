@@ -12,36 +12,24 @@ class NavegacaoAuxiliarCardapio extends React.Component {
         super(props);
         this.state = {
             barra_ativa: false,
-            section: 'topo',
-            adicionar_cardapio: true,
-            numero_convidados: this.props.info_busca.numero_convidados === '' ? 30 : Number(this.props.info_busca.numero_convidados),
-            valor_total: ''
+            section: 'lista_informacoes_cardapio',
+            lista_informacoes_cardapio_ativa: false,
+            inclusos_no_cardapio_ativa: false,
+            entradas_ativa: false,
+            sobremesas_ativa: false,
+            bebidas_ativa: false,
+            servicos_adicionais_ativa: false,
+            info_prestador_ativa: false,
+            avaliacoes_prestador_ativa: false,
+            adicionar_cardapio: true
         }
-        this.handleInputChange = this.handleInputChange.bind(this);
         this.renderNavegacaoAuxiliar = this.renderNavegacaoAuxiliar.bind(this);
-        
-
-        //lista_informacoes_cardapio
-        //inclusos_no_cardapio 
-
-
-
-        //'info_prestador'
-    }
-
-    async handleInputChange(param, newValue) {
-        this.props.handleSearchInputChange('numero_convidados', newValue);
-        await this.setState({
-            numero_convidados: newValue
-        })
-        this.calcularValores();
-        console.log(this.state);
     }
 
     handleScrollCall(hash) {
         function handleScrollTo() {
             let deslocamento = 0;
-            if(hash==='lista_informacoes_cardapio'|| hash==='inclusos_no_cardapio') {
+            if(hash==='lista_informacoes_cardapio') {
                 deslocamento = 80;
             } else {
                 deslocamento = 130;
@@ -62,14 +50,14 @@ class NavegacaoAuxiliarCardapio extends React.Component {
                     <div className = 'navegacao_auxiliar_cardapio'>
                         <div className = 'links'>
                             <ul>
-                                <li onClick = {this.handleScrollCall('lista_informacoes_cardapio')}>Fotos</li>
-                                <li className = 'secundario' onClick = {this.handleScrollCall('inclusos_no_cardapio')}>Incluso</li>
-                                <li onClick = {this.handleScrollCall('entradas')}>Entradas</li>
-                                <li onClick = {this.handleScrollCall('sobremesas')}>Sobremesas</li>
-                                <li onClick = {this.handleScrollCall('bebidas')}>Bebidas</li>
-                                <li onClick = {this.handleScrollCall('servicos_adicionais')}>Serviços</li>
-                                <li className = 'secundario' onClick = {this.handleScrollCall('info_prestador')}>Prestador</li>
-                                <li onClick = {this.handleScrollCall('avaliacoes_prestador')}>Avaliações</li>
+                                <li className = {this.state.section === 'lista_informacoes_cardapio' ? 'ativa' : 'inativa'} onClick = {this.handleScrollCall('lista_informacoes_cardapio')}>Fotos</li>
+                                <li className = {this.state.section === 'inclusos_no_cardapio' ? 'ativa secundario' : 'inativa secundario'} onClick = {this.handleScrollCall('inclusos_no_cardapio')}>Incluso</li>
+                                <li className = {this.state.section === 'entradas' ? 'ativa' : 'inativa'} onClick = {this.handleScrollCall('entradas')}>Entradas</li>
+                                <li className = {this.state.section === 'sobremesas' ? 'ativa' : 'inativa'} onClick = {this.handleScrollCall('sobremesas')}>Sobremesas</li>
+                                <li className = {this.state.section === 'bebidas' ? 'ativa' : 'inativa'} onClick = {this.handleScrollCall('bebidas')}>Bebidas</li>
+                                <li className = {this.state.section === 'servicos_adicionais' ? 'ativa' : 'inativa'} onClick = {this.handleScrollCall('servicos_adicionais')}>Serviços</li>
+                                <li className = {this.state.section === 'info_prestador' ? 'ativa secundario' : 'inativa secundario'} onClick = {this.handleScrollCall('info_prestador')}>Prestador</li>
+                                <li className = {this.state.section === 'avaliacoes_prestador' ? 'ativa' : 'inativa'} onClick = {this.handleScrollCall('avaliacoes_prestador')}>Avaliações</li>
                             </ul>
                         </div>
                         {this.renderAdicionarCardapio(this.state.adicionar_cardapio)}
@@ -85,6 +73,15 @@ class NavegacaoAuxiliarCardapio extends React.Component {
                 info_busca = {this.props.info_busca}
                 info_cardapio = {this.props.info_cardapio}
                 formato = 'reduzido'
+                info_itens = {this.props.info_itens}
+                id_prestador = {this.props.id_prestador}
+                cesta = {this.props.cesta}
+                handleAdicaoEdicaoCesta = {this.props.handleAdicaoEdicaoCesta}
+                cardapio_na_cesta = {this.props.cardapio_na_cesta}
+                handleStatusCardapio = {this.props.handleStatusCardapio}
+                valor_total_cardapio = {this.props.valor_total_cardapio}
+                valor_total = {this.props.valor_total}
+                calcularValores = {this.props.calcularValores}
             />;
         }
     }
@@ -92,7 +89,7 @@ class NavegacaoAuxiliarCardapio extends React.Component {
     componentDidMount() {
         const Section = document.getElementById('informacoes_cardapio');
         const SectionOptions = {
-            rootMargin: '0px 0px 0px 0px'
+            rootMargin: '-100px 0px 0px 0px'
         };
 
         const Observer = new IntersectionObserver(entries => {
@@ -101,6 +98,28 @@ class NavegacaoAuxiliarCardapio extends React.Component {
                     this.setState({ barra_ativa: true });
                 } else {
                     this.setState({ barra_ativa: false });
+                }
+            });
+        }, SectionOptions);
+
+        Observer.observe(Section);
+
+        ['lista_informacoes_cardapio', 'inclusos_no_cardapio','entradas', 'sobremesas', 'bebidas', 
+        'servicos_adicionais', 'info_prestador', 'avaliacoes_prestador', 'informacoes_adicionais_cardapio'].map(section => {
+            this.createSectionObserver(section);
+        })
+    }
+
+    createSectionObserver(section_name) {
+        const Section = document.getElementById(section_name); 
+        const SectionOptions = {
+            rootMargin: '-121px 0px -' + (window.innerHeight - 200) + 'px 0px'
+        };
+
+        const Observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    this.setState({ section: section_name });
                 }
             });
         }, SectionOptions);

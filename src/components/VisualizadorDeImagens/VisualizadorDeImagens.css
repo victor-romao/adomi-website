@@ -1,0 +1,107 @@
+.visualizador_imagens {
+    width: 100%;
+    height: calc(100vh);
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+    font-family: 'Open Sans';
+    font-size: 20px;
+}
+
+.visualizador_imagens .fundo {
+    background-color: white;
+    width: 100%;
+    height: calc(100vh);
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+.visualizador_imagens .conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    width: 90%;
+    height: calc(90vh);
+    position: fixed;
+    top: calc(5vh);
+}
+
+.visualizador_imagens p {
+    height: 5vh;
+    margin: 0px;
+}
+
+.visualizador_imagens .imagem {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: auto 0px;
+}
+
+.visualizador_imagens div img {
+    max-width: 80%;
+    max-height: calc(85vh);
+    margin: 0px;
+    padding: 0px;
+}
+
+.visualizador_imagens .fechar {
+    height: 20px;
+    border-radius: 15px;
+    border: 1px solid rgb(237, 237, 237);
+    position: absolute;
+    right: 15px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.visualizador_imagens .fechar:hover {
+    background-color: rgb(237, 237, 237);
+}
+
+.visualizador_imagens button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    background-color: white;
+    border-radius: 30px;
+    border: 3px rgb(237, 235, 220) solid;
+    cursor: pointer;
+    outline: none;
+}
+
+.visualizador_imagens button:hover {
+    background-color: rgb(237, 235, 220);
+}
+
+.visualizador_imagens .inativo {
+    background-color: rgb(240, 240, 240);
+    border: 3px rgb(219, 219, 219) solid;
+    cursor: default;
+}
+
+.visualizador_imagens .inativo:hover {
+    background-color: rgb(240, 240, 240);
+}
+
+.visualizador_imagens button img {
+    height: 30px;
+    padding-right: 5px;
+}
+
+.visualizador_imagens .proximo img {
+    transform: rotate(180deg);
+}
+

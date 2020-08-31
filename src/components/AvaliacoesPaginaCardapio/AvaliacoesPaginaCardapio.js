@@ -24,8 +24,8 @@ class AvaliacoesPaginaCardapio extends React.Component {
     renderAvaliacao (avaliacao, quantidade_avaliacoes) {
         if(avaliacao === 'Novo') {
             return (
-                <div id = 'avaliacoes_prestador' className = 'avaliacoes_prestador'>
-                    <h6 className = 'bold'>Sem Avaliações</h6>
+                <div className = 'avaliacoes_prestador'>
+                    <h6 id = 'avaliacoes_prestador' className = 'bold'>Sem Avaliações</h6>
                     <p>Infelizmente o Prestador ainda não possui avaliações, mas estamos aqui para ajudar. Saiba mais sobre nossas garantias nos <Link to = '/termos_e_privacidade'>Termos e Condições de Uso</Link>.</p>
                 </div>
             );

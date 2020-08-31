@@ -339,16 +339,16 @@ class CarrosselDeCards extends React.Component {
         }
     }
 
-    renderButtonproximo (servico) {
+    renderButtonProximo (servico) {
         let id_inicial = this.state[servico].id_inicial_atual;
         let id_final = id_inicial + this.state.num_exibidos;
         if(id_final === this.state[servico].info_cardapios.length) {
             return (
-                <button className = 'inativo proximo'><img src = {require('../../resources/icons/seta.png')} alt = 'anterior'/></button>
+                <button className = 'inativo proximo'><img src = {require('../../resources/icons/seta.png')} alt = 'próximo'/></button>
             );
         } else {
             return (
-                <button className = 'ativo proximo' onClick = {this.handleFunctionCall(servico, 'proximo')}><img src = {require('../../resources/icons/seta.png')} alt = 'anterior'/></button>
+                <button className = 'ativo proximo' onClick = {this.handleFunctionCall(servico, 'proximo')}><img src = {require('../../resources/icons/seta.png')} alt = 'próximo'/></button>
             );
         }
     }
@@ -368,7 +368,7 @@ class CarrosselDeCards extends React.Component {
             <div className = 'cardapios'>
                 { this.renderButtonAnterior(servico) }
                 { this.renderCardapios(servico) }
-                { this.renderButtonproximo(servico) }
+                { this.renderButtonProximo(servico) }
             </div>
             
         );

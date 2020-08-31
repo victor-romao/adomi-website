@@ -51,7 +51,10 @@ class InformacaoCardapio extends React.Component {
                             {this.renderAvaliacao(this.props.info_cardapio.avaliacao, this.props.info_cardapio.quantidade_avaliacoes)}
                         </div>
                     </div>
-                    <FotosCardapio info_cardapio = { this.props.info_cardapio } handleStatusChangeVisualizador = { this.props.handleStatusChangeVisualizador } />
+                    <FotosCardapio 
+                        info_cardapio = { this.props.info_cardapio } 
+                        handleStatusChangeVisualizador = { this.props.handleStatusChangeVisualizador }
+                    />
                     <div className = 'divisao_colunas'>
                         <div className = 'descricao_cardapio'>
                             <h4 className = 'bold'>Detalhes</h4>
@@ -63,6 +66,15 @@ class InformacaoCardapio extends React.Component {
                             handleSearchInputChange = {this.props.handleSearchInputChange} 
                             info_busca = {this.props.info_busca}
                             info_cardapio = {this.props.info_cardapio}
+                            info_itens = {this.props.info_itens}
+                            id_prestador = {this.props.id_prestador}
+                            cesta = {this.props.cesta}
+                            handleAdicaoEdicaoCesta = {this.props.handleAdicaoEdicaoCesta}
+                            cardapio_na_cesta = {this.props.cardapio_na_cesta}
+                            handleStatusCardapio = {this.props.handleStatusCardapio}
+                            valor_total_cardapio = {this.props.valor_total_cardapio}
+                            valor_total = {this.props.valor_total}
+                            calcularValores = {this.props.calcularValores}
                         />
                     </div>
                 </div>

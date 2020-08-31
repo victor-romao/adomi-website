@@ -25,7 +25,7 @@ class PaginaCardapio extends React.Component {
                 titulo: 'Churrasco Premium',
                 subtitulo: 'Cortes especiais como chorizo e tomahawk preparados na brasa',
                 tipo_de_comida: 'Churrasco',
-                custo_logistico: 0,
+                custo_logistico: 100,
                 avaliacao: 4.5,
                 quantidade_avaliacoes: 7,
                 imagens: [
@@ -307,22 +307,76 @@ class PaginaCardapio extends React.Component {
                     'Disponibilidade para receber o prestador e sua equipe 1 hora antes do evento'
                 ]
             },
-            carrinho: [],
-            visualizador_imagem_ativo: false
+            visualizador_imagem_ativo: false,
+            imagem_inicial_visualizador: 1,
+            cardapio_na_cesta: '',
+            valor_total_cardapio: '',
+            valor_total: ''
         }
         this.handleStatusChangeVisualizador = this.handleStatusChangeVisualizador.bind(this);
+        this.handleStatusCardapio = this.handleStatusCardapio.bind(this);
+        this.calcularValores = this.calcularValores.bind(this);
+        this.definirStatusCardapio = this.definirStatusCardapio.bind(this);
     }
 
-    handleStatusChangeVisualizador() {
+    calcularValores() {
+        const quantidade = this.props.info_busca.numero_convidados === '' ? 30 : Number(this.props.info_busca.numero_convidados);
+        const valor_total_cardapio = this.state.info_cardapio.valor_por_pessoa*quantidade;
+        const valor_total = valor_total_cardapio + this.state.info_cardapio.custo_logistico;
+        this.setState({
+            valor_total_cardapio: valor_total_cardapio,
+            valor_total: valor_total
+        })
+    }
+
+    definirStatusCardapio() {
+        let cardapio_na_cesta = false;
+        Object.keys(this.props.cesta).map(id_prestador => {
+            if(Number(id_prestador)===Number(this.state.info_prestador.id_prestador)) {
+                Object.keys(this.props.cesta[id_prestador].cardapios).map(id_cardapio => {
+                    if(Number(id_cardapio) === Number(this.state.info_cardapio.id_cardapio)) {
+                        cardapio_na_cesta = true;
+                    }
+                })
+            }
+        });
+        if(cardapio_na_cesta) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    componentWillMount() {
+        this.setState({
+            cardapio_na_cesta: this.definirStatusCardapio()
+        })
+    }
+
+    async handleStatusCardapio() {
+        await this.setState({
+            cardapio_na_cesta: this.definirStatusCardapio()
+        })
+        console.log(this.state.cardapio_na_cesta);
+    }
+
+    handleStatusChangeVisualizador(img_inicial) {
         const newValue = !this.state.visualizador_imagem_ativo
         this.setState({
-            visualizador_imagem_ativo: newValue
+            visualizador_imagem_ativo: newValue,
+            imagem_inicial_visualizador: img_inicial
         });
     }
 
     renderVisualizadorDeImagem(status) {
         if(status) {
-            return <VisualizadorDeImagem />;
+            return (
+                <VisualizadorDeImagem 
+                        info_cardapio = {this.state.info_cardapio}
+                        imagem_inicial_visualizador = {this.state.imagem_inicial_visualizador}
+                        handleStatusChangeVisualizador = {this.handleStatusChangeVisualizador}
+                />
+            );
         }
     }
 
@@ -341,15 +395,33 @@ class PaginaCardapio extends React.Component {
                     info_cardapio = {this.state.info_cardapio} 
                     handleSearchInputChange = {this.props.handleSearchInputChange} 
                     info_busca = { this.props.info_busca }
+                    info_itens = {this.state.info_itens}
+                    id_prestador = {this.state.info_prestador.id_prestador}
+                    cesta = {this.props.cesta}
+                    handleAdicaoEdicaoCesta = {this.props.handleAdicaoEdicaoCesta}
+                    cardapio_na_cesta = {this.state.cardapio_na_cesta}
+                    handleStatusCardapio = {this.handleStatusCardapio}
+                    valor_total_cardapio = {this.state.valor_total_cardapio}
+                    valor_total = {this.state.valor_total}
+                    calcularValores = {this.calcularValores}
                 />
                 <div className = 'divisao_colunas'>
                     <div className = 'principal'>
                         <div className = 'conteudo'>
                             <InformacaoCardapio 
                                 info_cardapio = {this.state.info_cardapio} 
+                                info_itens = {this.state.info_itens}
+                                id_prestador = {this.state.info_prestador.id_prestador}
                                 handleStatusChangeVisualizador = {this.handleStatusChangeVisualizador}
                                 handleSearchInputChange = {this.props.handleSearchInputChange} 
                                 info_busca = { this.props.info_busca }
+                                cesta = {this.props.cesta}
+                                handleAdicaoEdicaoCesta = {this.props.handleAdicaoEdicaoCesta}
+                                cardapio_na_cesta = {this.state.cardapio_na_cesta}
+                                handleStatusCardapio = {this.handleStatusCardapio}
+                                valor_total_cardapio = {this.state.valor_total_cardapio}
+                                valor_total = {this.state.valor_total}
+                                calcularValores = {this.calcularValores}
                             />
                             <Itens 
                                 info_itens = {this.state.info_itens} 
@@ -371,6 +443,9 @@ class PaginaCardapio extends React.Component {
                     <Cesta 
                         handleSearchInputChange = {this.props.handleSearchInputChange} 
                         info_busca = { this.props.info_busca }
+                        cesta = {this.props.cesta}
+                        infos_cesta = {this.props.infos_cesta}
+                        valores_cesta = {this.props.valores_cesta}
                     />
                 </div>
                 { this.renderVisualizadorDeImagem(this.state.visualizador_imagem_ativo) }

@@ -62,7 +62,7 @@ class InfoAdicionaisPaginaCardapio extends React.Component {
 
     render() {
         return (
-            <div className = 'informacoes_adicionais_cardapio'>
+            <div id = 'informacoes_adicionais_cardapio' className = 'informacoes_adicionais_cardapio'>
                 <h4 className = 'bold'>O que você deve saber</h4>
                 <div className = 'container'>
                     <h6 className = 'bold'>Sobre o Serviço</h6>

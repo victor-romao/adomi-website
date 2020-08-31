@@ -25,6 +25,10 @@ class Routes extends React.Component {
                         <Home 
                             handleSearchInputChange = {this.props.handleSearchInputChange}   
                             info_busca = { this.props.info_busca }
+                            cesta = {this.props.cesta}
+                            infos_cesta = {this.props.infos_cesta}
+                            valores_cesta = {this.props.valores_cesta}
+                            handleAdicaoEdicaoCesta = {this.props.handleAdicaoEdicaoCesta}
                             {...props}
                         />} 
                         path = '/' exact 
@@ -33,6 +37,10 @@ class Routes extends React.Component {
                         <AjudaContratante 
                             handleSearchInputChange = {this.props.handleSearchInputChange}  
                             info_busca = { this.props.info_busca }
+                            cesta = {this.props.cesta}
+                            infos_cesta = {this.props.infos_cesta}
+                            valores_cesta = {this.props.valores_cesta}
+                            handleAdicaoEdicaoCesta = {this.props.handleAdicaoEdicaoCesta}
                             {...props}
                         />} 
                         path = '/ajuda' exact
@@ -49,6 +57,10 @@ class Routes extends React.Component {
                         <InfoCovid 
                             handleSearchInputChange = {this.props.handleSearchInputChange}  
                             info_busca = { this.props.info_busca }
+                            cesta = {this.props.cesta}
+                            infos_cesta = {this.props.infos_cesta}
+                            valores_cesta = {this.props.valores_cesta}
+                            handleAdicaoEdicaoCesta = {this.props.handleAdicaoEdicaoCesta}
                             {...props}
                         />} 
                         path = '/info_covid' exact
@@ -57,6 +69,10 @@ class Routes extends React.Component {
                         <Servicos 
                             handleSearchInputChange = {this.props.handleSearchInputChange}  
                             info_busca = { this.props.info_busca }
+                            cesta = {this.props.cesta}
+                            infos_cesta = {this.props.cesta}
+                            valores_cesta = {this.props.cesta}
+                            handleAdicaoEdicaoCesta = {this.props.handleAdicaoEdicaoCesta}
                             {...props}
                         />} 
                         path = '/servicos/:id'
@@ -65,6 +81,10 @@ class Routes extends React.Component {
                         <Cardapios 
                             handleSearchInputChange = {this.props.handleSearchInputChange}  
                             info_busca = { this.props.info_busca }
+                            cesta = {this.props.cesta}
+                            infos_cesta = {this.props.infos_cesta}
+                            valores_cesta = {this.props.valores_cesta}
+                            handleAdicaoEdicaoCesta = {this.props.handleAdicaoEdicaoCesta}
                             {...props} 
                         />} 
                         path = '/cardapios' exact
@@ -73,6 +93,10 @@ class Routes extends React.Component {
                         <PaginaCardapio 
                             handleSearchInputChange = {this.props.handleSearchInputChange}   
                             info_busca = { this.props.info_busca }
+                            cesta = {this.props.cesta}
+                            infos_cesta = {this.props.infos_cesta}
+                            valores_cesta = {this.props.valores_cesta}
+                            handleAdicaoEdicaoCesta = {this.props.handleAdicaoEdicaoCesta}
                             {...props}
                         />} 
                         path = '/cardapios/:id' 
@@ -81,6 +105,10 @@ class Routes extends React.Component {
                         <SobreAdomi  
                             handleSearchInputChange = {this.props.handleSearchInputChange}  
                             info_busca = { this.props.info_busca } 
+                            cesta = {this.props.cesta}
+                            infos_cesta = {this.props.infos_cesta}
+                            valores_cesta = {this.props.valores_cesta}
+                            handleAdicaoEdicaoCesta = {this.props.handleAdicaoEdicaoCesta}
                             {...props}
                         />} 
                         path = '/sobre' exact
@@ -93,6 +121,10 @@ class Routes extends React.Component {
                         <Erro 
                             handleSearchInputChange = {this.props.handleSearchInputChange}  
                             info_busca = { this.props.info_busca }
+                            cesta = {this.props.cesta}
+                            infos_cesta = {this.props.infos_cesta}
+                            valores_cesta = {this.props.valores_cesta}
+                            handleAdicaoEdicaoCesta = {this.props.handleAdicaoEdicaoCesta}
                             {...props} 
                         />} 
                     />

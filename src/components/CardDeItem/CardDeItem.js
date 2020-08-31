@@ -18,6 +18,12 @@ class CardDeItem extends React.Component {
         });
     }
 
+    componentWillUpdate(nextProps) {
+        if(this.props.info_busca.numero_convidados !== nextProps.info_busca.numero_convidados) {
+            this.handleInputChange('', nextProps.info_busca.numero_convidados);
+        }
+    }
+
     calcularCustoItem() {
         if(this.props.item.tipo_precificacao==='valor por pessoa') {
            return this.state.quantidade*this.props.item.valor;
@@ -41,7 +47,7 @@ class CardDeItem extends React.Component {
                 return (
                     <div className = 'custos'>
                         <div className = 'container'>
-                            <BotaoAlteracaoQuantidade info_busca = {this.props.info_busca} handleInputChange = {this.handleInputChange}/>
+                            <BotaoAlteracaoQuantidade quantidade = { this.state.quantidade } handleInputChange = {this.handleInputChange}/>
                             <div className = 'valor_por_pessoa'>
                                 <div className = 'valor'>
                                     <span>R$</span>

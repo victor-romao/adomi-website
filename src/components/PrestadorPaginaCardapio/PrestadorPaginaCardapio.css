@@ -82,10 +82,7 @@
 
 .info_prestador .infos_auxiliares .sobre {
    width: calc(47vw);
-}
-
-.info_prestador .infos_auxiliares .especialidades {
-    
+   line-height: 19px;
 }
 
 .info_prestador .infos_auxiliares .especialidades li {

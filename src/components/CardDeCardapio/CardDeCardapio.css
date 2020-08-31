@@ -66,6 +66,7 @@
 .cardapio p {
     color: rgb(151, 153, 155);
     font-size: 13px;
+    line-height: 17px;
     width: 100%;
     text-align: left;
     padding-bottom: 15px;
