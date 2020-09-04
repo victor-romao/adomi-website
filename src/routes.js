@@ -11,6 +11,7 @@ import PaginaCardapio from './pages/PaginaCardapio';
 import SobreAdomi from './pages/SobreAdomi';
 import TemosEPrivacidade from './pages/TermosEPrivacidade';
 import Erro from './pages/Erro';
+import ReservaEvento from './pages/ReservaEvento';
 
 class Routes extends React.Component {
     constructor(props) {
@@ -28,7 +29,10 @@ class Routes extends React.Component {
                             cesta = {this.props.cesta}
                             infos_cesta = {this.props.infos_cesta}
                             valores_cesta = {this.props.valores_cesta}
+                            calcularValores = {this.props.calcularValores}
                             handleAdicaoEdicaoCesta = {this.props.handleAdicaoEdicaoCesta}
+                            handleQuantidadeChangeCesta = {this.props.handleQuantidadeChangeCesta}
+                            handleRemoverDaCesta = {this.props.handleRemoverDaCesta}
                             {...props}
                         />} 
                         path = '/' exact 
@@ -40,7 +44,10 @@ class Routes extends React.Component {
                             cesta = {this.props.cesta}
                             infos_cesta = {this.props.infos_cesta}
                             valores_cesta = {this.props.valores_cesta}
+                            calcularValores = {this.props.calcularValores}
                             handleAdicaoEdicaoCesta = {this.props.handleAdicaoEdicaoCesta}
+                            handleQuantidadeChangeCesta = {this.props.handleQuantidadeChangeCesta}
+                            handleRemoverDaCesta = {this.props.handleRemoverDaCesta}
                             {...props}
                         />} 
                         path = '/ajuda' exact
@@ -60,7 +67,10 @@ class Routes extends React.Component {
                             cesta = {this.props.cesta}
                             infos_cesta = {this.props.infos_cesta}
                             valores_cesta = {this.props.valores_cesta}
+                            calcularValores = {this.props.calcularValores}
                             handleAdicaoEdicaoCesta = {this.props.handleAdicaoEdicaoCesta}
+                            handleQuantidadeChangeCesta = {this.props.handleQuantidadeChangeCesta}
+                            handleRemoverDaCesta = {this.props.handleRemoverDaCesta}
                             {...props}
                         />} 
                         path = '/info_covid' exact
@@ -72,7 +82,10 @@ class Routes extends React.Component {
                             cesta = {this.props.cesta}
                             infos_cesta = {this.props.cesta}
                             valores_cesta = {this.props.cesta}
+                            calcularValores = {this.props.calcularValores}
                             handleAdicaoEdicaoCesta = {this.props.handleAdicaoEdicaoCesta}
+                            handleQuantidadeChangeCesta = {this.props.handleQuantidadeChangeCesta}
+                            handleRemoverDaCesta = {this.props.handleRemoverDaCesta}
                             {...props}
                         />} 
                         path = '/servicos/:id'
@@ -84,7 +97,10 @@ class Routes extends React.Component {
                             cesta = {this.props.cesta}
                             infos_cesta = {this.props.infos_cesta}
                             valores_cesta = {this.props.valores_cesta}
+                            calcularValores = {this.props.calcularValores}
                             handleAdicaoEdicaoCesta = {this.props.handleAdicaoEdicaoCesta}
+                            handleQuantidadeChangeCesta = {this.props.handleQuantidadeChangeCesta}
+                            handleRemoverDaCesta = {this.props.handleRemoverDaCesta}
                             {...props} 
                         />} 
                         path = '/cardapios' exact
@@ -96,10 +112,28 @@ class Routes extends React.Component {
                             cesta = {this.props.cesta}
                             infos_cesta = {this.props.infos_cesta}
                             valores_cesta = {this.props.valores_cesta}
+                            calcularValores = {this.props.calcularValores}
                             handleAdicaoEdicaoCesta = {this.props.handleAdicaoEdicaoCesta}
+                            handleQuantidadeChangeCesta = {this.props.handleQuantidadeChangeCesta}
+                            handleRemoverDaCesta = {this.props.handleRemoverDaCesta}
                             {...props}
                         />} 
                         path = '/cardapios/:id' 
+                    />
+                    <Route render = { props => 
+                        <ReservaEvento 
+                            handleSearchInputChange = {this.props.handleSearchInputChange}   
+                            info_busca = { this.props.info_busca }
+                            cesta = {this.props.cesta}
+                            infos_cesta = {this.props.infos_cesta}
+                            valores_cesta = {this.props.valores_cesta}
+                            calcularValores = {this.props.calcularValores}
+                            handleAdicaoEdicaoCesta = {this.props.handleAdicaoEdicaoCesta}
+                            handleQuantidadeChangeCesta = {this.props.handleQuantidadeChangeCesta}
+                            handleRemoverDaCesta = {this.props.handleRemoverDaCesta}
+                            {...props}
+                        />} 
+                        path = '/pedido/reservar' exact
                     />
                     <Route render = { props => 
                         <SobreAdomi  
@@ -108,7 +142,10 @@ class Routes extends React.Component {
                             cesta = {this.props.cesta}
                             infos_cesta = {this.props.infos_cesta}
                             valores_cesta = {this.props.valores_cesta}
+                            calcularValores = {this.props.calcularValores}
                             handleAdicaoEdicaoCesta = {this.props.handleAdicaoEdicaoCesta}
+                            handleQuantidadeChangeCesta = {this.props.handleQuantidadeChangeCesta}
+                            handleRemoverDaCesta = {this.props.handleRemoverDaCesta}
                             {...props}
                         />} 
                         path = '/sobre' exact
@@ -124,7 +161,10 @@ class Routes extends React.Component {
                             cesta = {this.props.cesta}
                             infos_cesta = {this.props.infos_cesta}
                             valores_cesta = {this.props.valores_cesta}
+                            calcularValores = {this.props.calcularValores}
                             handleAdicaoEdicaoCesta = {this.props.handleAdicaoEdicaoCesta}
+                            handleQuantidadeChangeCesta = {this.props.handleQuantidadeChangeCesta}
+                            handleRemoverDaCesta = {this.props.handleRemoverDaCesta}
                             {...props} 
                         />} 
                     />

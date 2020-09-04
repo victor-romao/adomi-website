@@ -311,16 +311,18 @@ class PaginaCardapio extends React.Component {
             imagem_inicial_visualizador: 1,
             cardapio_na_cesta: '',
             valor_total_cardapio: '',
-            valor_total: ''
+            valor_total: '',
+            quantidade: ''
         }
         this.handleStatusChangeVisualizador = this.handleStatusChangeVisualizador.bind(this);
         this.handleStatusCardapio = this.handleStatusCardapio.bind(this);
         this.calcularValores = this.calcularValores.bind(this);
         this.definirStatusCardapio = this.definirStatusCardapio.bind(this);
+        this.handleQuantidadeChange = this.handleQuantidadeChange.bind(this);
     }
 
     calcularValores() {
-        const quantidade = this.props.info_busca.numero_convidados === '' ? 30 : Number(this.props.info_busca.numero_convidados);
+        const quantidade = this.state.quantidade;
         const valor_total_cardapio = this.state.info_cardapio.valor_por_pessoa*quantidade;
         const valor_total = valor_total_cardapio + this.state.info_cardapio.custo_logistico;
         this.setState({
@@ -347,17 +349,18 @@ class PaginaCardapio extends React.Component {
         }
     }
 
-    componentWillMount() {
-        this.setState({
-            cardapio_na_cesta: this.definirStatusCardapio()
-        })
+    async handleQuantidadeChange(quantidade) {
+        await this.setState({
+            quantidade: quantidade
+        });
+        this.calcularValores();
+
     }
 
     async handleStatusCardapio() {
         await this.setState({
             cardapio_na_cesta: this.definirStatusCardapio()
         })
-        console.log(this.state.cardapio_na_cesta);
     }
 
     handleStatusChangeVisualizador(img_inicial) {
@@ -380,6 +383,33 @@ class PaginaCardapio extends React.Component {
         }
     }
 
+    componentWillMount() {
+        let cardapio_na_cesta = this.definirStatusCardapio();
+        if(cardapio_na_cesta) {
+            this.handleQuantidadeChange(this.props.cesta[this.state.info_prestador.id_prestador].cardapios[this.state.info_cardapio.id_cardapio].quantidade);
+        } else {
+            this.handleQuantidadeChange(this.props.info_busca.numero_convidados === '' ? 30 : Number(this.props.info_busca.numero_convidados));
+        }
+        this.props.calcularValores();
+        this.setState({
+            cardapio_na_cesta: cardapio_na_cesta
+        })
+    }
+
+    componentWillUpdate(nextProps, nextState) {                    
+        if(nextState.cardapio_na_cesta) {
+            if(Object.keys(this.props.cesta).length !== 0 && Object.keys(nextProps.cesta).length !== 0) {
+                if(Number(this.props.cesta[this.state.info_prestador.id_prestador].cardapios[this.state.info_cardapio.id_cardapio].quantidade) !== Number(nextProps.cesta[this.state.info_prestador.id_prestador].cardapios[this.state.info_cardapio.id_cardapio].quantidade)) {
+                    this.handleQuantidadeChange(Number(nextProps.cesta[this.state.info_prestador.id_prestador].cardapios[this.state.info_cardapio.id_cardapio].quantidade));
+                }
+            }
+        } else {
+            if(this.props.info_busca.numero_convidados !== nextProps.info_busca.numero_convidados) {
+                this.handleQuantidadeChange(nextProps.info_busca.numero_convidados);
+            }
+        }
+    }
+
     render() {
         return (
             <div className = 'pagina_cardapio'>
@@ -389,6 +419,12 @@ class PaginaCardapio extends React.Component {
                     animacao_busca = { false }  
                     handleSearchInputChange = {this.props.handleSearchInputChange} 
                     info_busca = { this.props.info_busca }
+                    cesta = {this.props.cesta}
+                    infos_cesta = {this.props.infos_cesta}
+                    valores_cesta = {this.props.valores_cesta}
+                    calcularValores = {this.props.calcularValores}
+                    handleQuantidadeChangeCesta = {this.props.handleQuantidadeChangeCesta}
+                    handleRemoverDaCesta = {this.props.handleRemoverDaCesta}
                     {...this.props}
                 />
                 <NavegacaoAuxiliarCardapio 
@@ -404,6 +440,8 @@ class PaginaCardapio extends React.Component {
                     valor_total_cardapio = {this.state.valor_total_cardapio}
                     valor_total = {this.state.valor_total}
                     calcularValores = {this.calcularValores}
+                    quantidade = {this.state.quantidade}
+                    handleQuantidadeChange = {this.handleQuantidadeChange}
                 />
                 <div className = 'divisao_colunas'>
                     <div className = 'principal'>
@@ -422,10 +460,16 @@ class PaginaCardapio extends React.Component {
                                 valor_total_cardapio = {this.state.valor_total_cardapio}
                                 valor_total = {this.state.valor_total}
                                 calcularValores = {this.calcularValores}
+                                quantidade = {this.state.quantidade}
+                                handleQuantidadeChange = {this.handleQuantidadeChange}
                             />
                             <Itens 
                                 info_itens = {this.state.info_itens} 
-                                info_busca = {this.props.info_busca} 
+                                info_busca = {this.props.info_busca}
+                                id_prestador = {this.state.info_prestador.id_prestador}
+                                cesta = {this.props.cesta}
+                                handleAdicaoEdicaoCesta = {this.props.handleAdicaoEdicaoCesta}
+                                quantidade = {this.state.quantidade}
                             />
                             <PrestadorPaginaCardapio 
                                 info_prestador = {this.state.info_prestador}
@@ -446,6 +490,11 @@ class PaginaCardapio extends React.Component {
                         cesta = {this.props.cesta}
                         infos_cesta = {this.props.infos_cesta}
                         valores_cesta = {this.props.valores_cesta}
+                        calcularValores = {this.props.calcularValores}
+                        handleAdicaoEdicaoCesta = {this.props.handleAdicaoEdicaoCesta}
+                        handleQuantidadeChangeCesta = {this.props.handleQuantidadeChangeCesta}
+                        handleRemoverDaCesta = {this.props.handleRemoverDaCesta}
+                        pagina_reserva = {false}
                     />
                 </div>
                 { this.renderVisualizadorDeImagem(this.state.visualizador_imagem_ativo) }

@@ -49,9 +49,13 @@ class BarraDeBusca extends React.Component {
     }
 
     handleSearchToolStatusChange () {
-        const newValue = !this.state.search_tool_ativa;
+        if(this.state.search_tool_ativa) {
+            document.getElementById('barra_de_navegacao').style.zIndex = "15";
+        } else {
+            document.getElementById('barra_de_navegacao').style.zIndex = "100";
+        }
         this.setState({
-            search_tool_ativa: newValue
+            search_tool_ativa: !this.state.search_tool_ativa
         })
     }
 

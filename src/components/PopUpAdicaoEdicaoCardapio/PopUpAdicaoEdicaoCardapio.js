@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './PopUpAdicaoEdicao.css';
+import './PopUpAdicaoEdicaoCardapio.css';
 import BotaoAlteracaoQuantidade from '../BotaoAlteracaoQuantidade/BotaoAlteracaoQuantidade';
 
-class PopUpAdicaoEdicao extends React.Component {
+class PopUpAdicaoEdicaoCardapio extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -24,12 +24,14 @@ class PopUpAdicaoEdicao extends React.Component {
                 inclusa_quantas_quiser: 'Inclusas – Escolha Quantas Quiser',
                 inclusa_apenas_uma: 'Inclusas – Escolha Apenas Uma',
                 adicionais: 'Adicionais'
-            }
+            },
+            valor_total: this.props.valor_total
         }
         this.handleQuantidadeChange = this.handleQuantidadeChange.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleAdicaoEdicaoCesta = this.handleAdicaoEdicaoCesta.bind(this);
         this.definirStatusInicialItens = this.definirStatusInicialItens.bind(this);
+        this.calcularValores = this.calcularValores.bind(this);
     }
 
     definirStatusCardapio() {
@@ -43,11 +45,7 @@ class PopUpAdicaoEdicao extends React.Component {
                 })
             }
         });
-        if(cardapio_na_cesta) {
-            return true;
-        } else {
-            return false;
-        }
+        return cardapio_na_cesta;
     }
 
     async definirStatusInicialItens() {
@@ -95,8 +93,8 @@ class PopUpAdicaoEdicao extends React.Component {
     }
 
     componentWillMount() {
-        this.props.calcularValores();
         this.definirStatusInicialItens();
+        this.handleQuantidadeChange('quantidade',this.props.quantidade);
     }
 
     async handleQuantidadeChange(param, newValue) {
@@ -111,7 +109,16 @@ class PopUpAdicaoEdicao extends React.Component {
 
             }
         }));
-        this.props.calcularValores();
+        this.calcularValores();
+    }
+
+    calcularValores() {
+        const quantidade = this.state.informacoes_adicao_cardapio.info_cardapio.quantidade;
+        const valor_total_cardapio = this.props.info_cardapio.valor_por_pessoa*quantidade;
+        const valor_total = valor_total_cardapio + this.props.info_cardapio.custo_logistico;
+        this.setState({
+            valor_total: valor_total
+        })
     }
 
     async handleInputChange(e) {
@@ -126,7 +133,7 @@ class PopUpAdicaoEdicao extends React.Component {
                     }
                 }
             }));
-        } else {
+        } else if (e.target.type === 'checkbox'){
             let paramValue = e.target.checked;
             let id_item = e.target.id.substring(5);
             await this.setState(prevState => ({
@@ -144,13 +151,57 @@ class PopUpAdicaoEdicao extends React.Component {
                     }
                 }
             }));
+        } else {
+            let id_item = e.target.id.substring(5);
+            await this.handleRadioChange(id_item);
         }
     }
 
+    handleRadioChange(id_item_selecionado) {
+        let opcionais = this.state.informacoes_adicao_cardapio.info_cardapio.opcionais;
+        Object.keys(opcionais).map(id_item => {
+            if(opcionais[id_item].section === opcionais[id_item_selecionado].section) {
+                if(opcionais[id_item].subdivision === opcionais[id_item_selecionado].subdivision) {
+                    if(id_item !== id_item_selecionado) {
+                        this.setState(prevState => ({
+                            informacoes_adicao_cardapio: {
+                                ...prevState.informacoes_adicao_cardapio,
+                                info_cardapio: {
+                                    ...prevState.informacoes_adicao_cardapio.info_cardapio,
+                                    opcionais: {
+                                        ...prevState.informacoes_adicao_cardapio.info_cardapio.opcionais,
+                                        [id_item]: {
+                                            ...prevState.informacoes_adicao_cardapio.info_cardapio.opcionais[id_item],
+                                            status: false
+                                        }
+                                    }
+                                }
+                            }
+                        }));
+                    } else {
+                        this.setState(prevState => ({
+                            informacoes_adicao_cardapio: {
+                                ...prevState.informacoes_adicao_cardapio,
+                                info_cardapio: {
+                                    ...prevState.informacoes_adicao_cardapio.info_cardapio,
+                                    opcionais: {
+                                        ...prevState.informacoes_adicao_cardapio.info_cardapio.opcionais,
+                                        [id_item]: {
+                                            ...prevState.informacoes_adicao_cardapio.info_cardapio.opcionais[id_item],
+                                            status: true
+                                        }
+                                    }
+                                }
+                            }
+                        }));
+                    }
+                }
+            }
+        })
+    }
+
     async handleAdicaoEdicaoCesta(e) {
-        console.log('irei atualizar a cesta');
         await this.props.handleAdicaoEdicaoCesta('cardapios', this.state.informacoes_adicao_cardapio);
-        console.log('cesta atualizada');
         this.props.handleStatusCardapio();
         this.props.handleStatusPopUp(e);
     }
@@ -224,7 +275,7 @@ class PopUpAdicaoEdicao extends React.Component {
                         <img className = 'fechar' src = {require('../../resources/icons/fechar.png')} alt = 'fechar' onClick = {this.props.handleStatusPopUp}/>
                     </div>
                     <div className = 'box meio'>
-                        <img src = {require('../../resources/imagens/cardapios/cardapio_' + this.props.info_cardapio.id_cardapio + '/' + this.props.info_cardapio.imagens[0]) } alt = {this.props.info_cardapio.tipo_de_comida}/>
+                        <img className = 'img_cardapio' src = {require('../../resources/imagens/cardapios/cardapio_' + this.props.info_cardapio.id_cardapio + '/' + this.props.info_cardapio.imagens[0]) } alt = {this.props.info_cardapio.tipo_de_comida}/>
                         { this.renderSectionItens('entradas') }
                         { this.renderSectionItens('sobremesas') }
                         <div className = 'input'>
@@ -246,7 +297,7 @@ class PopUpAdicaoEdicao extends React.Component {
                                 quantidade = { this.props.quantidade }
                                 handleInputChange = { this.handleQuantidadeChange}
                             />
-                            <button className = 'botao_central' onClick = {this.handleAdicaoEdicaoCesta}>Adicionar R$ {this.props.valor_total}</button>
+                            <button className = 'botao_central' onClick = {this.handleAdicaoEdicaoCesta}>{this.props.cardapio_na_cesta ? "Alterar" : "Adicionar"} R$ {this.state.valor_total}</button>
                         </div>
                     </div>
                 </div>
@@ -255,4 +306,4 @@ class PopUpAdicaoEdicao extends React.Component {
     }
 }
 
-export default PopUpAdicaoEdicao;
+export default PopUpAdicaoEdicaoCardapio;

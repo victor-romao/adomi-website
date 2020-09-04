@@ -1,7 +1,7 @@
 import React from 'react';
 import './AdicionarCardapioCesta.css';
 import BotaoAlteracaoQuantidade from '../BotaoAlteracaoQuantidade/BotaoAlteracaoQuantidade';
-import PopUpAdicaoEdicao from '../PopUpAdicaoEdicao/PopUpAdicaoEdicao';
+import PopUpAdicaoEdicaoCardapio from '../PopUpAdicaoEdicaoCardapio/PopUpAdicaoEdicaoCardapio';
 
 class AdicionarCardapioCesta extends React.Component {
     constructor(props) {
@@ -14,12 +14,12 @@ class AdicionarCardapioCesta extends React.Component {
         this.handleStatusPopUp = this.handleStatusPopUp.bind(this);
     }
 
-    componentWillMount() {
-        this.props.calcularValores();
-    }
-
     async handleInputChange(param, newValue) {
-        await this.props.handleSearchInputChange('numero_convidados', newValue);
+        if(this.props.cardapio_na_cesta) {
+            await this.props.handleQuantidadeChange(newValue);
+        } else {
+            await this.props.handleSearchInputChange('numero_convidados', newValue);
+        }
         this.props.calcularValores();
     }
 
@@ -38,7 +38,7 @@ class AdicionarCardapioCesta extends React.Component {
                     <div className = 'container'>
                         <BotaoAlteracaoQuantidade 
                             handleInputChange = {this.handleInputChange} 
-                            quantidade = { this.props.info_busca.numero_convidados }
+                            quantidade = {this.props.quantidade}
                         />
                         <div className = 'valor_por_pessoa'>
                             <span className = 'bold span_adicionar'>R$</span>
@@ -47,7 +47,7 @@ class AdicionarCardapioCesta extends React.Component {
                         </div>
                     </div>
                     <div className = 'container space'>
-                        <p>R${this.props.info_cardapio.valor_por_pessoa} x {this.props.info_busca.numero_convidados === '' ? 30 : Number(this.props.info_busca.numero_convidados)} convidados</p>
+                        <p>R${this.props.info_cardapio.valor_por_pessoa} x {this.props.quantidade} convidados</p>
                         <p>R$ {this.props.valor_total_cardapio}</p>
                     </div>
                     <div className = 'container'>
@@ -58,7 +58,7 @@ class AdicionarCardapioCesta extends React.Component {
                         <p className = 'bold'>Valor Total</p>
                         <p className = 'bold'>R$ {this.props.valor_total}</p>
                     </div>
-                    <button onClick = {this.handleStatusPopUp} className = 'adicionar space'>{this.props.cardapio_na_cesta ? 'Alterar' : 'Adicionar'}</button>
+                    <button id = 'adicionar_cardapio_principal' onClick = {this.handleStatusPopUp} className = 'adicionar space'>{this.props.cardapio_na_cesta ? 'Alterar' : 'Adicionar'}</button>
                 </div>
             );
         } else {
@@ -67,10 +67,10 @@ class AdicionarCardapioCesta extends React.Component {
                     <div className = 'container'>
                         <BotaoAlteracaoQuantidade 
                             handleInputChange = {this.handleInputChange} 
-                            quantidade = { this.props.info_busca.numero_convidados }
+                            quantidade = { this.props.quantidade }
                         />
                         <p className = 'total'>R$ {this.props.valor_total}</p>
-                        <button onClick = {this.handleStatusPopUp} className = 'adicionar space'>{this.props.cardapio_na_cesta ? 'Alterar' : 'Adicionar'}</button>
+                        <button id = 'adicionar_cardapio_nav_aux' onClick = {this.handleStatusPopUp} className = 'adicionar space'>{this.props.cardapio_na_cesta ? 'Alterar' : 'Adicionar'}</button>
                     </div>
                 </div>
             );
@@ -80,8 +80,8 @@ class AdicionarCardapioCesta extends React.Component {
     renderPopUpAdicao() {
         if(this.state.pop_up_ativo) {
             return (
-                <PopUpAdicaoEdicao 
-                    quantidade = {this.props.info_busca.numero_convidados === '' ? 30 : Number(this.props.info_busca.numero_convidados) }
+                <PopUpAdicaoEdicaoCardapio 
+                    quantidade = {this.props.quantidade}
                     handleSearchInputChange = {this.props.handleSearchInputChange}
                     info_cardapio = {this.props.info_cardapio}
                     info_itens = {this.props.info_itens}
@@ -101,7 +101,7 @@ class AdicionarCardapioCesta extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className = 'adicionar_cardapio'>
                 { this.renderAdicionarCardapio() }
                 { this.renderPopUpAdicao() }
             </div>

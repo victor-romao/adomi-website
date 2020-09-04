@@ -23,7 +23,7 @@ class InfoCovid extends React.Component {
                 transitionEnterTimeout={500}
                 transitionLeave={true} 
                 transitionLeaveTimeout={10000}>
-                    <div className = 'info_covid'>
+                    <div id = 'link_info_covid' className = 'info_covid'>
                         <p>Confira nossas políticas em resposta à COVID-19. <Link to = './info_covid'>Saiba mais</Link></p>
                     </div>
                 </ReactCSSTransitionGroup>
@@ -33,17 +33,27 @@ class InfoCovid extends React.Component {
     }
 
     componentDidMount() {
-        const Section = document.getElementById('barra_de_busca_principal');
+        const Section = document.getElementById('titulo');
         const SectionOptions = {
-            rootMargin: '-110px 0px 0px 0px'
+            rootMargin: '-120px 0px 0px 0px'
         };
 
         const Observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if(!entry.isIntersecting) {
                     this.setState({ covid: false });
+                    console.log('not intersecting');
+                    if(document.querySelector('.cesta') !== null) {
+                        document.querySelector('.cesta').style.top = "62.5px";
+                        document.querySelector('.cesta').style.height = "calc(100vh - 63px)";
+                    }
                 } else {
                     this.setState({ covid: true });
+                    console.log('intersecting');
+                    if(document.querySelector('.cesta') !== null) {
+                        document.querySelector('.cesta').style.top = "91px";
+                        document.querySelector('.cesta').style.height = "calc(100vh - 92px)";
+                    }
                 }
             });
         }, SectionOptions);

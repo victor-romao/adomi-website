@@ -44,7 +44,6 @@ class BotaoAlteracaoQuantidade extends React.Component {
             quantidade: newValue
         });
         this.props.handleInputChange('quantidade', newValue);
-        console.log(newValue);
     }
 
     render() {

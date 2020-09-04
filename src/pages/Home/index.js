@@ -25,6 +25,13 @@ class Home extends React.Component {
         animacao_busca = { true }  
         handleSearchInputChange = {this.props.handleSearchInputChange}
         info_busca = { this.props.info_busca }
+        cesta = {this.props.cesta}
+        infos_cesta = {this.props.infos_cesta}
+        valores_cesta = {this.props.valores_cesta}
+        calcularValores = {this.props.calcularValores}
+        handleAdicaoEdicaoCesta = {this.props.handleAdicaoEdicaoCesta}
+        handleQuantidadeChangeCesta = {this.props.handleQuantidadeChangeCesta}
+        handleRemoverDaCesta = {this.props.handleRemoverDaCesta}
         {...this.props}
       />
       <ApresentacaoServicos 

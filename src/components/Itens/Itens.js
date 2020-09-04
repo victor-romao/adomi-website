@@ -42,7 +42,17 @@ class Itens extends React.Component {
                         <h4 className = 'bold'>{this.state.titulos[section]}</h4>
                         <div className = 'container'>
                             {this.props.info_itens[section].map(item => {
-                                return <CardDeItem item = {item} type = 'adicionais' info_busca = {this.props.info_busca}/>
+                                return (
+                                    <CardDeItem 
+                                        item = {item} 
+                                        type = 'adicionais' 
+                                        info_busca = {this.props.info_busca}
+                                        id_prestador = {this.props.id_prestador}
+                                        cesta = {this.props.cesta}
+                                        handleAdicaoEdicaoCesta = {this.props.handleAdicaoEdicaoCesta}
+                                        quantidade = {this.props.quantidade}
+                                    />
+                                );
                             })}
                         </div>
                     </div>
@@ -59,7 +69,17 @@ class Itens extends React.Component {
                     <h6 className = 'bold'>{this.state.titulos[subdivision]}</h6>
                     <div className = 'container'>
                         {this.props.info_itens[section][subdivision].map(item => {
-                            return <CardDeItem item = {item} type = {subdivision} info_busca = {this.props.info_busca}/>
+                            return (
+                                <CardDeItem 
+                                    item = {item} 
+                                    type = {subdivision} 
+                                    info_busca = {this.props.info_busca}
+                                    id_prestador = {this.props.id_prestador}
+                                    cesta = {this.props.cesta}
+                                    handleAdicaoEdicaoCesta = {this.props.handleAdicaoEdicaoCesta}
+                                    quantidade = {this.props.quantidade}
+                                />
+                            );
                         })}
                     </div>
                 </div>

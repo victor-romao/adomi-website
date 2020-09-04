@@ -1,10 +1,16 @@
+#barra_de_navegacao {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 15;
+}
+
 nav {
     width: 100%;
     position: sticky;
     top: 0;
-    z-index: 10;
+    z-index: 16;
 }
-
 
 
 .navbar {
@@ -86,6 +92,14 @@ nav .container {
 
 .links img:hover {
     transform: scale(1.1);
+}
+
+.navbar .links .salvos {
+    display: none;
+}
+
+.navbar .links .login {
+    display: none;
 }
 
 .login {

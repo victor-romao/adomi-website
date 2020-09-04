@@ -2,17 +2,32 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     background-color: white;
     width: 330px;
     height: calc(100vh - 63px);
+    top: 62.5px;
     position: fixed;
     right: 0px;
-    overflow-y: auto;
-    padding: 2%;
+    overflow-y: none;
     box-sizing: border-box;
     font-family: 'Open Sans';
     color: rgb(151, 153, 155);
+    border-left: 0.1px rgb(219, 219, 219) solid;
+}
+
+.cesta_vazia {
+    justify-content: center;
+    z-index: 10;
+}
+
+.cesta_vazia p {
+    width: 90%;
+}
+
+
+.cesta_cheia {
+    justify-content: flex-start;
+    z-index: 15;
 }
 
 .cesta .cesta_vazia {
@@ -24,4 +39,281 @@
     margin-top: 15px;
     text-align: center;
     font-size: 18px;
+}
+
+.cesta .cinza_escuro {
+    color: rgb(89, 89, 89);
+    font-size: 16px;
+    padding: 0;
+    margin-bottom: 5px;
+}
+
+.cesta .remover_img {
+    height: 17px;
+    width: auto;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.cesta .editar_button {
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+    font-weight: normal;
+    background-color: white;
+    border: none;
+    border-radius: none;
+    width: auto;
+    outline: none;
+    cursor: pointer;
+}
+
+.cesta .laranja {
+    color: rgb(239, 106, 0);
+}
+
+.cesta .amarelo {
+    color: rgb(255, 182 ,0);
+}
+
+.cesta .prestadores {
+    box-shadow: 0px 5px 5px -3px rgb(237, 237, 237);
+    overflow-y: auto;
+    height: calc(100vh - 230px);
+    width: 100%;
+    padding: 10px 5%;
+    margin-top: 98px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.cesta .prestadores::-webkit-scrollbar {
+    width: 5px;
+}
+
+.cesta .prestadores::-webkit-scrollbar-thumb {
+    background-color: rgb(237, 237, 237)
+}
+
+.cesta .prestadores .infos_prestador {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.cesta .prestadores .infos_prestador img.prestador {
+    height: 50px;
+    margin-right: 7px;
+}
+
+.cesta .prestadores .infos_prestador .informacoes {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+}
+
+.cesta .prestadores .infos_prestador .informacoes .inferior {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 5px;
+    width: 100%;
+}
+
+.cesta .prestadores .infos_prestador .informacoes .remover {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+}
+
+.cesta .prestadores .cardapios, .cesta .prestadores .itens_adicionais {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 7px 0 7px 5%;
+    width: 95%;
+}
+
+.cesta .prestadores .cardapios h5, .cesta .prestadores .itens_adicionais h5 {
+    font-size: 18px;
+}
+
+.cesta .prestadores .cardapio, .cesta .prestadores .item_adicional {
+    border-radius: 0px;
+    border: none;
+    margin-top: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.cesta .prestadores .cardapio .infos_cardapio, .cesta .prestadores .item_adicional .infos_item_adicional {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+}
+
+.cesta .prestadores .cardapio .opcionais {
+    margin: 0px;
+    padding: 3px 0 5px 0;
+}
+
+.cesta .prestadores .cardapio img, .cesta .prestadores .item_adicional img {
+    height: 40px;
+    width: auto;
+    border-radius: 0px;
+    margin-right: 7px;
+}
+
+.cesta .prestadores .cardapio h4, .cesta .prestadores .item_adicional h4 {
+    color: black;
+    font-size: 15px;
+    padding: 0px;
+    margin-bottom: 5px;
+}
+
+.cesta .prestadores .cardapio .informacoes, .cesta .prestadores .item_adicional .informacoes {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+}
+
+.cesta .prestadores .cardapio .informacoes a {
+    color: rgb(255, 182 ,0);
+    text-decoration-line: underline;
+    font-size: 14px;
+}
+
+.cesta .prestadores .cardapio .editar, .cesta .prestadores .item_adicional .inferior {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.cesta .prestadores .editar .alteracao_quantidade {
+    padding: 2px;
+}
+
+.cesta .prestadores .editar .alteracao_quantidade input {
+    width: 18px;
+    font-size: 13px;
+    margin: 0 2px;
+}
+
+.cesta .prestadores .editar .alteracao_quantidade button {
+    font-size: 17px;
+}
+
+.cesta .prestadores .cardapio .editar div, .cesta .prestadores .item_adicional .editar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.cesta .prestadores .cardapio .editar .remover_img, .cesta .prestadores .item_adicional .editar .remover_img {
+    height: 18px;
+    width: auto;
+    margin-right: 5px;
+}
+
+.cesta .prestadores .cardapio .editar p {
+    padding: 0;
+    margin: 0px;
+    width: auto;
+    font-size: 14px;
+}
+
+.cesta .prestadores .item_adicional .remover_item {
+    cursor: pointer;
+}
+
+.cesta .prestadores .cardapio .editar p.amarelo {
+    color: rgb(255, 182 ,0);
+}
+
+.cesta .fixo {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 5%;
+    box-sizing: border-box;
+}
+
+.cesta .fixo .esvaziar {
+    padding: 10px 0;
+    color: rgb(151, 153, 155);
+    font-size: 15px;
+    font-weight: normal;
+    background-color: white;
+    border: none;
+    border-radius: none;
+    width: auto;
+    outline: none;
+    cursor: pointer;
+}
+
+.cesta .fixo .reservar {
+    padding: 10px 10px;
+    color: white;
+    font-size: 18px;
+    font-weight: normal;
+    background-color: rgb(239, 106, 0);
+    border: 2.5px rgb(237, 237, 237) solid;
+    border-radius: 12px;
+    width: auto;
+    outline: none;
+    cursor: pointer;
+}
+
+.cesta .fixo .reservar:hover {
+    background-color: rgb(255, 106, 0);
+}
+
+.cesta .prestadores .pop_up_adicao_edicao_cardapio .cardapio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+    font-family: 'Open Sans';
+    width: 400px;
+    box-sizing: border-box;
+    padding: 20px 0;
+    max-height: calc(90vh);
+    background-color: white;
+    opacity: 1;
+    border-radius: 40px;
+    position: fixed;
+    top: calc(5vh);
+    z-index: 40;
+}
+
+.cesta .prestadores .pop_up_adicao_edicao_cardapio .box .fechar {
+    height: 20px;
+    width: auto;
+    border-radius: 15px;
+    border: 1px solid rgb(237, 237, 237);
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.cesta .prestadores .pop_up_adicao_edicao_cardapio .cardapio .meio .img_cardapio {
+    width: 90%;
+    height: auto;
+    margin-top: 20px;
 }

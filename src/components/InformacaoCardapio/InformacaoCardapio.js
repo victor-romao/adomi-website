@@ -75,6 +75,8 @@ class InformacaoCardapio extends React.Component {
                             valor_total_cardapio = {this.props.valor_total_cardapio}
                             valor_total = {this.props.valor_total}
                             calcularValores = {this.props.calcularValores}
+                            quantidade = {this.props.quantidade}
+                            handleQuantidadeChange = {this.props.handleQuantidadeChange}
                         />
                     </div>
                 </div>

@@ -39,6 +39,13 @@ class Cardapios extends React.Component {
                     animacao_busca = { false }  
                     handleSearchInputChange = {this.props.handleSearchInputChange}
                     info_busca = { this.props.info_busca }
+                    cesta = {this.props.cesta}
+                    infos_cesta = {this.props.infos_cesta}
+                    valores_cesta = {this.props.valores_cesta}
+                    calcularValores = {this.props.calcularValores}
+                    handleAdicaoEdicaoCesta = {this.props.handleAdicaoEdicaoCesta}
+                    handleQuantidadeChangeCesta = {this.props.handleQuantidadeChangeCesta}
+                    handleRemoverDaCesta = {this.props.handleRemoverDaCesta}
                     {...this.props}
                 />
                 <p>Filtro Cardapios:</p>

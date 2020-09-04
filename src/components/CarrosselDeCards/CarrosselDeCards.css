@@ -3,14 +3,14 @@
     margin: 50px auto;
 }
 
-.cardapios {
+.carrossel .cardapios {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 20px auto;
 }
 
-.cardapios button {
+.carrossel .cardapios button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,26 +23,26 @@
     outline: none;
 }
 
-.cardapios button:hover {
+.carrossel .cardapios button:hover {
     background-color: rgb(237, 235, 220);
 }
 
-.cardapios .inativo {
+.carrossel .cardapios .inativo {
     background-color: rgb(240, 240, 240);
     border: 3px rgb(219, 219, 219) solid;
     cursor: default;
 }
 
-.cardapios .inativo:hover {
+.carrossel .cardapios .inativo:hover {
     background-color: rgb(240, 240, 240);
 }
 
-.cardapios button img {
+.carrossel .cardapios button img {
     height: 30px;
     padding-right: 5px;
 }
 
-.cardapios .proximo img {
+.carrossel .cardapios .proximo img {
     transform: rotate(180deg);
 }
 

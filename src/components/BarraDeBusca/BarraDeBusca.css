@@ -136,7 +136,7 @@ form.barra_de_busca_reduzida .buscar img {
 }
 
 #search_tool_ativa {
-
+    z-index: 50;
 }
 
 #search_tool_ativa .search_tool{
@@ -149,7 +149,7 @@ form.barra_de_busca_reduzida .buscar img {
     background-color: white;
     top: 61px;
     right: 0px;
-    z-index: 5;
+    z-index: 50;
     padding: 2% 0 1% 0;
 }
 

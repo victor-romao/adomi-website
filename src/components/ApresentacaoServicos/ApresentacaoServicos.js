@@ -71,7 +71,7 @@ class ApresentacaoServicos extends React.Component {
                     <img className = 'amarelo sorriso' src = {require('../../resources/logo/sorriso-amarelo-esquerda-apresentacao-servicos.png')} alt = 'sorriso amarelo'/>
                     <div>
                         <div className = 'titulo'>
-                            <h1>O seu evento a domicílio</h1>
+                            <h1 id = 'titulo'>O seu evento a domicílio</h1>
                             <h2>Encontre e contrate sem complicações</h2>
                         </div>
                         <SelecaoServico handleServicoChange = { this.handleServicoChange } info_busca = { this.props.info_busca }/>
