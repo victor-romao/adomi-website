@@ -5,10 +5,15 @@
     background-color: white;
     border-radius: 3vw;
     margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .informacoes_da_reserva h2 {
-    font-size: 28px;
+    font-family: 'Open Sans';
+    font-size: 24px;
+    font-weight: bold;
     color: rgb(151, 153, 155);
     margin-bottom: 20px;
 }
@@ -21,47 +26,56 @@
     margin-bottom: 20px;
 }
 
-.informacoes_da_reserva .data_e_local .exibir_data_e_local {
+.informacoes_da_reserva .exibir_data_e_local {
     position: static;
     padding: 0px;
     box-shadow: none;
-    width: 65%;
-}
-
-.informacoes_da_reserva .data_e_local .exibir_data_e_local .informacao {
-    
-}
-
-.informacoes_da_reserva .data_e_local .exibir_data_e_local h6 {
-    font-weight: bold;
-    font-size: 18px;
-    color: rgb(89, 89, 89);
-}
-
-.informacoes_da_reserva .data_e_local .exibir_data_e_local .esquerda {
-    width: 80%;
-}
-
-.informacoes_da_reserva .data_e_local .exibir_data_e_local .esquerda p {
-    color: rgb(151, 153, 155);
-    font-size: 16px;
     width: 100%;
 }
 
-.informacoes_da_reserva .data_e_local .exibir_data_e_local .esquerda p.centro {
-    color: rgb(151, 153, 155);
-    font-size: 16px;
-    width: 40%;
+.informacoes_da_reserva .exibir_data_e_local .informacao {
+    margin-bottom: 15px;
 }
 
-.informacoes_da_reserva .data_e_local input {
-    width: 25%;
+.informacoes_da_reserva .exibir_data_e_local h6, .informacoes_da_reserva label {
+    font-weight: bold;
+    font-size: 18px;
+    color: rgb(89, 89, 89);
+    margin-bottom: 5px;
+}
+
+.informacoes_da_reserva .exibir_data_e_local .linha {
+    margin: 0px;
+    flex-wrap: wrap;
+}
+
+.informacoes_da_reserva .exibir_data_e_local .esquerda {
+    width: 60%;
+    min-width: 250px;
+    padding-top: 3px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+.informacoes_da_reserva .exibir_data_e_local .esquerda p {
+    color: rgb(151, 153, 155);
+    font-size: 16px;
+}
+
+.informacoes_da_reserva .exibir_data_e_local .esquerda p.centro {
+    color: rgb(151, 153, 155);
+    font-size: 16px;
+}
+
+.informacoes_da_reserva input {
     box-sizing: border-box;
     border: 2.5px rgb(237, 237, 237) solid;
-    margin: 0;
+    margin: 3px 0;
     border-radius: 10px;
-    height: 40px;
+    height: 32px;
+    width: 100%;
     padding-left: 5px; 
     color:black;
     text-align: left;
+    height: 100px;
 }

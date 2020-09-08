@@ -30,16 +30,39 @@
     z-index: 15;
 }
 
-.cesta .cesta_vazia {
+.cesta_vazia img{
     height: 100px;
     text-align: center;
 }
 
-.cesta p.cesta_vazia {
+.cesta_vazia p{
     margin-top: 15px;
     text-align: center;
     font-size: 18px;
 }
+
+#cesta_pagina_reserva {
+    padding: calc(65vw*0.03);
+    width: 100%;
+    min-height: 250px;
+    height: auto;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 3vw;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#cesta_pagina_reserva h2 {
+    font-family: 'Open Sans';
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(151, 153, 155);
+    margin-bottom: 15px;
+}
+
 
 .cesta .cinza_escuro {
     color: rgb(89, 89, 89);
@@ -81,10 +104,19 @@
     overflow-y: auto;
     height: calc(100vh - 230px);
     width: 100%;
-    padding: 10px 5%;
-    margin-top: 98px;
     box-sizing: border-box;
     font-size: 14px;
+}
+
+.cesta_cheia .prestadores {
+    margin-top: 98px;
+    padding: 10px 5%;
+}
+
+#cesta_pagina_reserva .prestadores {
+    height: auto;
+    min-height: 225px;
+    padding-bottom: 15px;
 }
 
 .cesta .prestadores::-webkit-scrollbar {
@@ -280,6 +312,18 @@
 
 .cesta .fixo .reservar:hover {
     background-color: rgb(255, 106, 0);
+}
+
+#cesta_pagina_reserva .valor_total_reserva {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    font-size: 18px;
+    color: black;
+    font-weight: bold;
+    width: 100%;
 }
 
 .cesta .prestadores .pop_up_adicao_edicao_cardapio .cardapio {

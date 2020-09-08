@@ -9,6 +9,24 @@ class InformacaoCardapio extends React.Component {
         super(props);
     }
 
+    handleScrollCall(hash) {
+        function handleScrollTo() {
+            let deslocamento = 0;
+            if(hash==='lista_informacoes_cardapio') {
+                deslocamento = 80;
+            } else {
+                deslocamento = 130;
+            }
+            let element = document.getElementById(hash);
+            let yPosition = element.getBoundingClientRect().top + window.pageYOffset - deslocamento;
+            window.scrollTo({
+                behavior: "smooth",
+                top: yPosition,
+            });
+        }
+        return handleScrollTo;
+    }
+
     renderLogistica (custo_logistico) {
         if(custo_logistico === 0) {
             return <p className = 'custo_logistico gratis'>Deslocamento Grátis</p>
@@ -20,13 +38,13 @@ class InformacaoCardapio extends React.Component {
     renderAvaliacao (avaliacao, quantidade_avaliacoes) {
         if(avaliacao === 'Novo') {
             return (
-                <div className = 'avaliacao'> 
+                <div onClick = {this.handleScrollCall('avaliacoes_prestador')} className = 'avaliacao'> 
                     <p className = 'bold nota'>{avaliacao}</p>
                 </div>
             );
         } else {
             return(
-                <div className = 'avaliacao'> 
+                <div onClick = {this.handleScrollCall('avaliacoes_prestador')} className = 'avaliacao'> 
                     <img src = {require('../../resources/icons/estrela.png')} alt = 'Avaliação'/>
                     <p className = 'bold nota'>{avaliacao}</p>
                     <p className = 'quantidade_avaliacao'>{'(' + quantidade_avaliacoes + ' avaliações)'}</p>

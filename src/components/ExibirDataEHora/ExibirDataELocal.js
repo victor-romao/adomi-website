@@ -34,6 +34,12 @@ class ExibirDataELocal extends React.Component {
         }
     }
 
+    renderComplemento() {
+        if(this.props.complemento) {
+            return <input type = 'text' placeholder = 'Complemento' name = 'complemento' id = 'complemento' onChange = {this.handleChange} />;
+        }
+    }
+
     renderPopUpEdicaoBusca(info_edicao) {
         if(this.state.status_pop_up_edicao_busca[info_edicao]) {
             return (
@@ -51,19 +57,22 @@ class ExibirDataELocal extends React.Component {
         return (
             <div className = 'exibir_data_e_local'>
                 <div className = 'informacao'>
-                    <div className = 'esquerda'>
-                        <h6 className = 'bold cinza_escuro'>Local do Evento</h6>
-                        {this.renderInfoBusca(this.props.info_busca.localizacao)}
-                    </div>    
-                    <button className = 'editar_button laranja' onClick = {this.handleStatusPopUpEdicaoBuscaCall('localizacao')}>Editar</button>
+                    <h6 className = 'bold cinza_escuro'>Local do Evento</h6>
+                    <div className = 'linha'>
+                        <div className = 'esquerda'>
+                            {this.renderInfoBusca(this.props.info_busca.localizacao)}
+                            <button className = 'editar_button laranja' onClick = {this.handleStatusPopUpEdicaoBuscaCall('localizacao')}>Editar</button>
+                        </div>
+                        {this.renderComplemento()}
+                    </div>
                     {this.renderPopUpEdicaoBusca('localizacao')}
                 </div>
                 <div className = 'informacao'>
+                    <h6 className = 'bold cinza_escuro'>Data e Horário</h6>
                     <div className = 'esquerda'>
-                        <h6 className = 'bold cinza_escuro'>Data e Horário</h6>
                         {this.renderInfoBusca(this.props.info_busca.data_e_hora)}
+                        <button className = 'editar_button laranja' onClick = {this.handleStatusPopUpEdicaoBuscaCall('data_e_hora')}>Editar</button>
                     </div>    
-                    <button className = 'editar_button laranja' onClick = {this.handleStatusPopUpEdicaoBuscaCall('data_e_hora')}>Editar</button>
                     {this.renderPopUpEdicaoBusca('data_e_hora')}
                 </div>
             </div>

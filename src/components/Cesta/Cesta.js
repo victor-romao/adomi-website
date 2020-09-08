@@ -87,6 +87,21 @@ class Cesta extends React.Component {
                     <p className = 'cesta_vazia'>Parece que você ainda não tem itens na cesta do seu evento</p>
                 </div>
             );
+        } else if (this.props.pagina_reserva) {
+            return(
+                <div id = 'cesta_pagina_reserva' className = 'cesta cesta_pagina_reserva' >
+                    <h2>Sua Cesta</h2>
+                    <div className = 'prestadores'>
+                        {Object.keys(this.props.cesta).map(id_prestador => {
+                            return this.renderPrestador(id_prestador)
+                        })}
+                    </div>
+                    <div className = 'valor_total_reserva'>
+                        <p>Total a Pagar</p>
+                        <p>R$ {Object.keys(this.props.valores_cesta).length === 0 ? 0 : this.props.valores_cesta.valor_total_cesta}</p>
+                    </div>
+                </div>
+            );
         } else {
             return(
                 <div id = 'cesta' className = 'cesta cesta_cheia' >

@@ -7,13 +7,11 @@ class InformacoesDaReserva extends React.Component {
         return (
             <div className = 'informacoes_da_reserva'>
                 <h2>Informações da Reserva</h2>
-                <div className = 'data_e_local'>
-                    <ExibirDataELocal 
-                        info_busca = {this.props.info_busca}
-                        handleSearchInputChange = {this.props.handleSearchInputChange}
-                    />
-                    <input type = 'text' placeholder = 'Complemento' name = 'complemento' id = 'complemento' onChange = {this.handleChange} />
-                </div>
+                <ExibirDataELocal 
+                    info_busca = {this.props.info_busca}
+                    handleSearchInputChange = {this.props.handleSearchInputChange}
+                    complemento = {true}
+                />
                 <label>Alguma observação adicional?</label>
                 <input type = 'text' placeholder = 'Ex: Alergias, pedidos especiais, informações adicionais sobre o espaço do evento, etc. ular' name = 'observacao_adicional' id = 'observacao_adicional' onChange = {this.handleChange} />
             </div>

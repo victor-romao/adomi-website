@@ -12,7 +12,7 @@ class FormularioInformacoesContratante extends React.Component {
                 email: '',
                 celular: '',
                 cpf: '',
-                aceite_termos: ''
+                aceite_termos: false
             }
         }
         this.handleChange = this.handleChange.bind(this);
@@ -32,6 +32,7 @@ class FormularioInformacoesContratante extends React.Component {
                 [param]: paramValue
             }
         }));
+        console.log(this.state);
     }
     
     render() {
@@ -55,8 +56,8 @@ class FormularioInformacoesContratante extends React.Component {
                     <input type = 'text' placeholder = 'CPF' name = 'cpf' id = 'cpf' onChange = {this.handleChange} />
                     <p className = 'descricao'>O número do CPF poderá ser utilizado para fins contratuais.</p>
                 </div>
-                <div>
-                    <div>
+                <div className = 'aceite_termos'>
+                    <label className = 'checkbox'>
                         <input 
                             id = 'aceite_termos' 
                             type = 'checkbox' 
@@ -65,8 +66,8 @@ class FormularioInformacoesContratante extends React.Component {
                             onChange = {this.handleChange}
                         />
                         <span className= {'aceite_termos_custom'}></span>
-                    </div>
-                    Aceito os <Link to = '/termos_e_privacidade'>Termos de Uso e a Política de Privacidade</Link>
+                    </label>
+                    <p>Aceito os <Link to = '/termos_e_privacidade'>Termos de Uso e a Política de Privacidade</Link></p>
                 </div>
                 <div className = 'enviar_pedido'>
                     <button>Enviar Pedido</button>

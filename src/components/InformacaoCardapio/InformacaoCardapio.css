@@ -54,6 +54,10 @@
     border-radius: 2px;
 }
 
+.informacoes_cardapio .avaliacao {
+    cursor: pointer;
+}
+
 .informacoes_cardapio .avaliacao .nota {
     margin: 0 5px;
     color: rgb(252, 209, 22);
